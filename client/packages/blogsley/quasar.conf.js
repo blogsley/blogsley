@@ -5,8 +5,7 @@ config = require('./config')
 CopyWebpackPlugin = require('copy-webpack-plugin')
 
 /*
-const distDir = process.env.FLASK_BUILD ? '../../../blogsley-cli/blogsley/static/client' : '../../dist'
-const publicPath = process.env.FLASK_BUILD ? 'static/client' : '/'
+const distDir = process.env.FLASK_BUILD ? '../../share/blogsley/static' : '../../dist'
 */
 const distDir = '../../dist'
 const publicPath = '/'

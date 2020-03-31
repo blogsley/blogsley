@@ -25,7 +25,16 @@ if is_pip_install:
 else:
     share_folder = os.path.join(os.path.abspath(os.path.dirname(__file__)), '../share/blogsley')
 
-db_folder = share_folder
+
+project_share_folder = 'share/blogsley'
+is_project = os.path.isdir(project_share_folder)
+
+if is_project:
+    db_folder = project_share_folder
+else:
+    db_folder = share_folder
+
+
 static_folder = f'{share_folder}/static'
 
 '''

@@ -1,4 +1,4 @@
-# Blogsley CLI
+# Blogsley :moon:
 
 Headless CMS/GraphQL server built with Flask, Graphene & SqlAlchemy
 
@@ -20,7 +20,7 @@ Headless CMS/GraphQL server built with Flask, Graphene & SqlAlchemy
         
 4. Install the package:
 
-        pip install blogsley-cli
+        pip install blogsley
 
 ## Usage
 
@@ -56,4 +56,4 @@ Headless CMS/GraphQL server built with Flask, Graphene & SqlAlchemy
         
 6. Install required packages:
 
-        pip install -e path/to/blogsley/blogsley-cli
+        pip install -e path/to/blogsley/blogsley

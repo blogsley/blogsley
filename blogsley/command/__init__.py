@@ -28,7 +28,7 @@ def init(ctx):
 
 @cli.command()
 @click.pass_context
-def serve(ctx):
+def run(ctx):
     os.environ["FLASK_ENV"] = "production"
     print(vars(ctx.obj))
     ctx.obj._loaded_app.run()

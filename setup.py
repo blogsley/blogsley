@@ -18,7 +18,7 @@ data_files = [(d, [os.path.join(d,f) for f in files])
 packages = find_packages(exclude=["__blogsley__", "tests"])
 
 setup(
-    name='blogsley-cli',
+    name='blogsley',
     packages=packages,
     include_package_data=True,
     data_files=data_files,
@@ -40,7 +40,7 @@ setup(
     description="Web Publishing Evolved",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/blogsley/blogsley-cli",
+    url="https://github.com/blogsley/blogsley",
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
