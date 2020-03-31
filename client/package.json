@@ -1,0 +1,17 @@
+{
+  "name": "root",
+  "private": true,
+  "scripts": {
+    "deploy": "node ./scripts/deploy.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "lerna": "^3.20.0"
+  },
+  "resolutions": {
+    "prosemirror-model": "1.8.2"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
+}
