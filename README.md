@@ -1,8 +1,13 @@
 # Blogsley :moon:
 
+
+## Web Publishing Evolved / CMS for the JAMstack!!!
+
 Headless CMS/GraphQL server built with Flask, Graphene & SqlAlchemy
 
-> :warning: **This is in the early alpha stage! **: Only try this if you feel adventurous!!!
+## Quick Links
+
+[Documentation](https://blogsley.readthedocs.io/)
 
 ## Installation
 
