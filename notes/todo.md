@@ -1,0 +1,10 @@
+blogsley 0.1.dev3 has requirement Babel==2.6.0, but you'll have babel 2.8.0 which is incompatible.
+blogsley 0.1.dev3 has requirement certifi==2019.6.16, but you'll have certifi 2019.11.28 which is incompatible.
+blogsley 0.1.dev3 has requirement Click==7.0, but you'll have click 7.1.1 which is incompatible.
+blogsley 0.1.dev3 has requirement idna==2.8, but you'll have idna 2.9 which is incompatible.
+blogsley 0.1.dev3 has requirement Jinja2==2.10.1, but you'll have jinja2 2.11.1 which is incompatible.
+blogsley 0.1.dev3 has requirement Pillow==6.2.0, but you'll have pillow 7.0.0 which is incompatible.
+blogsley 0.1.dev3 has requirement pytz==2018.9, but you'll have pytz 2019.3 which is incompatible.
+blogsley 0.1.dev3 has requirement requests==2.22.0, but you'll have requests 2.23.0 which is incompatible.
+blogsley 0.1.dev3 has requirement six==1.12.0, but you'll have six 1.14.0 which is incompatible.
+blogsley 0.1.dev3 has requirement urllib3==1.25.3, but you'll have urllib3 1.25.8 which is incompatible.
