@@ -8,7 +8,7 @@ Bootstrap-Flask==1.1.0
 certifi==2019.6.16
 chardet==3.0.4
 Click==7.0
-Flask==1.0.2
+Flask==1.1.1
 Flask-Babel==0.12.2
 Flask-Cors==3.0.7
 Flask-GraphQL==2.0.0
@@ -25,7 +25,7 @@ graphql-server-core==1.1.1
 gunicorn==20.0.4
 idna==2.8
 itsdangerous==1.1.0
-Jinja2==2.10.1
+Jinja2==2.11.1
 Mako==1.0.8
 MarkupSafe==1.1.1
 Pillow==6.2.0
@@ -47,3 +47,7 @@ text-unidecode==1.2
 urllib3==1.25.3
 Werkzeug==0.15.3
 WTForms==2.2.1
+
+gevent==1.4.0
+Flask-Sockets==0.2.1
+graphql-ws==0.3.0

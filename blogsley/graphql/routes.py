@@ -1,22 +1,33 @@
-from flask import render_template, request, current_app
-# from blogsley.graphql import schema
-import blogsley.schemas as schemas
-from flask_graphql import GraphQLView
-from blogsley.graphql import bp
 import os
 import sys
+
+from flask import render_template, request, current_app
+#from flask_graphql import GraphQLView
+from graphql.backend import GraphQLCoreBackend
+
+from blogsley.graphql import bp
+from blogsley.schema import schema
+
+from blogsley.graphql.view import GraphQLView
 
 path = os.path.join(os.path.dirname(__file__), "templates/playground.html")
 templateFile = open(path)
 TEMPLATE = templateFile.read()
 
+class CustomBackend(GraphQLCoreBackend):
+    def __init__(self, executor=None):
+        super().__init__(executor)
+        self.execute_params['allow_subscriptions'] = True
+
 bp.add_url_rule(
     '/graphql/',
     view_func=GraphQLView.as_view(
         'graphql',
-        schema=schemas.schema,
+        backend=CustomBackend(),
+        schema=schema,
         graphiql=True,
-        graphiql_template=TEMPLATE
+        graphiql_template=TEMPLATE,
+        subscriptions=True
     )
 )
 

@@ -6,6 +6,8 @@ from flask.cli import FlaskGroup
 import flask_migrate
 
 import blogsley.config
+
+import blogsley.pywsgi
 #TODO:Put these commands into seperate files and lazy load/deferred import
 #from blogsley.command.populate import populate as do_populate
 
@@ -16,7 +18,7 @@ def cli(ctx):
     ctx.ensure_object(dict)
     os.environ["FLASK_RUN_FROM_CLI"] = "false"
     #os.environ["FLASK_APP"] = "blogsley:create_app"
-    os.environ["FLASK_APP"] = "blogsley"
+    #os.environ["FLASK_APP"] = "blogsley"
 
 @cli.command()
 @click.pass_context
@@ -29,18 +31,22 @@ def init(ctx):
 @cli.command()
 @click.pass_context
 def run(ctx):
+    app = ctx.obj._loaded_app
     os.environ["FLASK_ENV"] = "production"
     print(vars(ctx.obj))
-    ctx.obj._loaded_app.run()
+    #ctx.obj._loaded_app.run()
+    blogsley.pywsgi.run(app)
 
 @cli.command()
 @click.pass_context
 def dev(ctx):
-    os.environ["FLASK_ENV"] = "development"
-    blogsley.config.debug = True
+    app = ctx.obj._loaded_app
+    #os.environ["FLASK_ENV"] = "development"
+    os.environ["FLASK_ENV"] = "debug"
+    blogsley.config.debug = app.debug = True
     print(vars(ctx.obj))
-    ctx.obj._loaded_app.run(debug=True)
-    #main(True)
+    #ctx.obj._loaded_app.run(debug=True)
+    blogsley.pywsgi.run(app)
 
 @cli.command()
 @click.pass_context

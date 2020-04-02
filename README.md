@@ -3,7 +3,7 @@
 
 ## Web Publishing Evolved / CMS for the JAMstack!!!
 
-Headless CMS/GraphQL server built with Flask, Graphene & SqlAlchemy
+Headless CMS/GraphQL client & server built with Flask, Graphene & SqlAlchemy
 
 ## Quick Links
 

@@ -120,7 +120,6 @@ class MyMutations(graphene.ObjectType):
     delete_post = DeletePost.Field()
 
 class Query(graphene.ObjectType):
-    # node = relay.Node.Field()
     post = relay.Node.Field(PostNode)
     all_posts = SQLAlchemyConnectionField(PostConnection)
     post_by = graphene.Field(PostNode, slug=graphene.String())
@@ -129,3 +128,11 @@ class Query(graphene.ObjectType):
     def resolve_post_by(parent, info, slug):
         query = PostNode.get_query(info)  # SQLAlchemy query
         return query.filter_by(slug=slug).first()
+
+class Subscription(graphene.ObjectType):
+    count_seconds = graphene.Int(up_to=graphene.Int())
+
+    def resolve_count_seconds(root, info, up_to=5):
+        return Observable.interval(1000)\
+                            .map(lambda i: "{0}".format(i))\
+                            .take_while(lambda i: int(i) <= up_to)

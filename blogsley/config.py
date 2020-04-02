@@ -4,6 +4,9 @@ import sys
 
 from dotenv import load_dotenv
 
+#So Jinja2 can find templates
+sys.path.append(os.path.join(os.path.dirname(__file__), "./templates"))
+
 basedir = os.getcwd()
 load_dotenv(os.path.join(basedir, '.env'))
 

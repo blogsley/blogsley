@@ -9,6 +9,9 @@ load_dotenv(os.path.join(basedir, '.env'))
 db = None
 
 class Config(object):
+    PORT_APP = os.environ.get('PORT_APP')
+    if not PORT_APP:
+        PORT_APP = 5000
     if os.environ.get("DOKKU_APP_TYPE"):
         MEDIA_ROOT = '/storage/media'
     else:

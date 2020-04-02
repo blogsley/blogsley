@@ -1,3 +1,5 @@
+from blogsley.app import create_app
+'''
 from blogsley.config import app, db
 from blogsley.models.users import User
 from blogsley.models.blog import Post
@@ -12,3 +14,4 @@ def humanize(d):
 @app.shell_context_processor
 def make_shell_context():
     return {'db': db, 'User': User, 'Post': Post}
+'''
