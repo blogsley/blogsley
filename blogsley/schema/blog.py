@@ -5,6 +5,8 @@ from graphene import relay
 from graphql_relay import to_global_id
 from graphene_sqlalchemy import SQLAlchemyObjectType, SQLAlchemyConnectionField
 
+import rx
+
 from blogsley.config import app
 from blogsley.config import db
 from blogsley.models.users import User
@@ -113,7 +115,7 @@ class DeletePost(graphene.Mutation):
 
         return ok
 
-class MyMutations(graphene.ObjectType):
+class Mutation(graphene.ObjectType):
     create_post = CreatePost.Field()
     update_post = UpdatePost.Field()
     publish_post = PublishPost.Field()
@@ -129,10 +131,28 @@ class Query(graphene.ObjectType):
         query = PostNode.get_query(info)  # SQLAlchemy query
         return query.filter_by(slug=slug).first()
 
+
+class PostChange(graphene.ObjectType):
+    kind = graphene.String()
+    def __init__(self, kind='UPDATE'):
+        super().__init__()
+
+#############
+def push_post(observer, scheduler):
+    observer.on_next(PostChange('UPDATE'))
+
 class Subscription(graphene.ObjectType):
+    post = graphene.Field(PostChange, id=graphene.ID())
+    def resolve_post(root, info, id=None):
+        print('post subscription')
+        source = rx.create(push_post)
+        print(source)
+        return source
+    '''
     count_seconds = graphene.Int(up_to=graphene.Int())
 
     def resolve_count_seconds(root, info, up_to=5):
         return Observable.interval(1000)\
                             .map(lambda i: "{0}".format(i))\
                             .take_while(lambda i: int(i) <= up_to)
+    '''

@@ -55,6 +55,26 @@ export default {
         console.log(post)
         this.state.model = deserialize(JSON.parse(post.model))
         return post
+      },
+      subscribeToMore: {
+        // below is the subscription query.
+        document: gql`
+          subscription postUpdate($id: ID!) {
+            post(id: $id) {
+              kind
+            }
+          }
+        `,
+        variables () {
+          return {
+            id: this.postId
+          }
+        },
+        updateQuery: (previousResult, { subscriptionData }) => {
+          const data = subscriptionData.data
+          console.log(data)
+          return data
+        }
       }
       // fetchPolicy: 'network-only'
     }

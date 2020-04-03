@@ -35,7 +35,7 @@ class SocketMiddleware(object):
                 with self.app.request_context(environ):
                     # add cookie to the request to have correct session handling
                     request.cookie = cookie
-
+                    print('ws')
                     handler(environment, **values)
                     return []
         except (NotFound, KeyError):

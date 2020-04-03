@@ -1,0 +1,13 @@
+{
+  "name": "@blogsley/diagnostics",
+  "version": "1.0.0",
+  "description": "Blogsley Server Diagnostics",
+  "main": "index.js",
+  "author": "Kurtis Fields",
+  "license": "MIT",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^7.1.1",
+    "mochawesome": "^5.0.0"
+  }
+}

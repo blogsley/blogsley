@@ -9,7 +9,6 @@ from flask_login import LoginManager
 
 from flask_mail import Mail
 from flask_babel import Babel, lazy_gettext as _l
-from flask_bootstrap import Bootstrap
 
 import jinja2
 
@@ -52,7 +51,6 @@ class Blogsley(Flask):
 
         blogsley.config.mail = mail = Mail(app)
         blogsley.config.babel = babel = Babel(app)
-        bootstrap = Bootstrap(app)
 
         from blogsley.auth import bp as auth_bp
         app.register_blueprint(auth_bp, url_prefix='/auth')
@@ -93,7 +91,17 @@ def create_app(config=None, environment=None):
     from blogsley.sockets import Sockets
     sockets = Sockets(app)
     from blogsley.graphql.subscription import bp as ws
-    sockets.register_blueprint(ws, url_prefix=r'/')
+    #sockets.register_blueprint(ws, url_prefix=r'/')
     #sockets.register_blueprint(ws)
+    from graphql_ws.gevent import GeventSubscriptionServer
+    from blogsley.schema import schema
+    subscription_server = GeventSubscriptionServer(schema)
+
+    @sockets.route('/subscriptions')
+    def echo_socket(ws):
+        print('echo')
+        subscription_server.handle(ws)
+        return []
+
     return app
     

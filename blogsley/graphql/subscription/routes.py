@@ -9,13 +9,21 @@ import json
 from flask import Flask, make_response
 from flask_sockets import Sockets
 
+from graphql.backend import GraphQLCoreBackend
+
 from graphql_ws.gevent import GeventSubscriptionServer
+from geventwebsocket.handler import WebSocketHandler
 
 from blogsley.schema import schema
 
 from blogsley.graphql.subscription import routes
 
-from geventwebsocket.handler import WebSocketHandler
+#from blogsley.graphql.subscription.view import GraphQLView
+
+class CustomBackend(GraphQLCoreBackend):
+    def __init__(self, executor=None):
+        super().__init__(executor)
+        self.execute_params['allow_subscriptions'] = True
 
 #Graphql Subscription Server
 subscription_server = GeventSubscriptionServer(schema)
@@ -25,6 +33,7 @@ subscription_server = GeventSubscriptionServer(schema)
 
 @bp.route('/subscriptions')
 def echo_socket(ws):
+    print('graphql-ws')
     subscription_server.handle(ws)
     return []
 

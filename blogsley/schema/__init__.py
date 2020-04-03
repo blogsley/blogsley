@@ -6,15 +6,15 @@ import blogsley.schema.users
 import blogsley.schema.blog
 import blogsley.schema.images
 
-class Mutations(users.MyMutations, blog.MyMutations, images.MyMutations):
+class Mutation(users.Mutation, blog.Mutation, images.Mutation):
     pass
 
-class Queries(users.Query, blog.Query, images.Query):
+class Query(users.Query, blog.Query, images.Query):
     pass
 
-#class Subscriptions(users.Subscription, blog.Subscription, images.Subscription):
-class Subscriptions(blog.Subscription):
+#class Subscription(users.Subscription, blog.Subscription, images.Subscription):
+class Subscription(blog.Subscription):
     pass
 
-#schema = graphene.Schema(query=Query, mutation=MyMutations)
-schema = graphene.Schema(query=Queries, mutation=Mutations, subscription=Subscriptions)
+#schema = graphene.Schema(query=Query, mutation=Mutation)
+schema = graphene.Schema(query=Query, mutation=Mutation, subscription=Subscription)

@@ -81,7 +81,7 @@ class DeleteImage(graphene.Mutation):
 
         return ok
 
-class MyMutations(graphene.ObjectType):
+class Mutation(graphene.ObjectType):
     create_image = CreateImage.Field()
     update_image = UpdateImage.Field()
     delete_image = DeleteImage.Field()

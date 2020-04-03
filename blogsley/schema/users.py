@@ -120,7 +120,7 @@ class DeleteUser(graphene.Mutation):
 
         return ok
 
-class MyMutations(graphene.ObjectType):
+class Mutation(graphene.ObjectType):
     login = Login.Field()
     create_user = CreateUser.Field()
     update_user = UpdateUser.Field()
