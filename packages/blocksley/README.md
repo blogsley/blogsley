@@ -1,8 +1,13 @@
-Blocksley :black_square_button: 
-===
-
-> Please note that blocksley is in alpha state.
+# Blocksley :black_square_button:
 
 Block Editor for the JAMstack using Quasar
 
-Demo at [https://blocksley.netlify.com/](https://blocksley.netlify.com/)
+## Quick Links
+
+:black_square_button: [Live Demo](https://blocksley.netlify.com/)
+
+##
+
+:warning: Please note that blocksley is in alpha preview.
+
+
