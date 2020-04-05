@@ -18,7 +18,6 @@
   ],
   "author": "Kurtis Fields",
   "license": "MIT",
-  "private": true,
   "dependencies": {
     "vue": "^2.6.11"
   },
