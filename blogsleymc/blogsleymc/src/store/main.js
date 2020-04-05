@@ -1,9 +1,11 @@
 const state = {
   navDrawerOpen: false,
   view: null,
+  vu: null,
   page: null,
   navbox: null,
   toolbox: null,
+  toolboxProps: null,
   header: null,
   footer: null,
   editor: null,
@@ -15,9 +17,11 @@ const getters = {
   navDrawerOpen: (state) => state.navDrawerOpen,
   toolDrawerOpen: (state) => state.toolDrawerOpen,
   view: (state) => state.view,
+  vu: (state) => state.vu,
   page: (state) => state.page,
   navbox: (state) => state.navbox,
   toolbox: (state) => state.toolbox,
+  toolboxProps: (state) => state.toolboxProps,
   header: (state) => state.header,
   footer: (state) => state.footer,
   $editor: (state) => state.editor,
@@ -41,6 +45,9 @@ const actions = {
   setView: ({ commit }, data) => {
     commit('view', data)
   },
+  setVu: ({ commit }, data) => {
+    commit('vu', data)
+  },
   setPage: ({ commit }, data) => {
     commit('page', data)
   },
@@ -49,6 +56,9 @@ const actions = {
   },
   setToolbox: (context, toolbox) => {
     context.commit('toolbox', toolbox)
+  },
+  setToolboxProps: (context, toolbox) => {
+    context.commit('toolboxProps', toolbox)
   },
   setHeader: (context, header) => {
     context.commit('header', header)
@@ -77,6 +87,9 @@ const mutations = {
   view: (state, data) => {
     state.view = data
   },
+  vu: (state, data) => {
+    state.view = data
+  },
   page: (state, data) => {
     state.page = data
   },
@@ -91,6 +104,12 @@ const mutations = {
       return
     }
     state.toolbox = toolbox
+  },
+  toolboxProps: (state, toolboxProps) => {
+    if (state.toolboxProps === toolboxProps) {
+      return
+    }
+    state.toolboxProps = toolboxProps
   },
   header: (state, header) => {
     state.header = header

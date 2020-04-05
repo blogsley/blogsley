@@ -20,6 +20,7 @@ import { render } from '../../../renderers'
 import { BlockEditorMixin } from '../../../mixins'
 import EditorShell from '../../../components/EditorShell'
 import MainMenu from './MainMenu'
+import Toolbox from './Toolbox'
 
 export default {
   name: 'ImageBlockEditor',
@@ -27,13 +28,16 @@ export default {
   props: ['frame', 'block'],
   components: {
     EditorShell,
-    MainMenu
+    MainMenu,
+    Toolbox
   },
   data () {
     return {
     }
   },
   mounted () {
+    this.setToolboxProps({vu: this, editor: this.editor})
+    this.setToolbox(Toolbox)
   },
   beforeDestroy () {
     console.log('image editor destroyed')

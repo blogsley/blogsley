@@ -18,8 +18,9 @@
       <q-btn flat icon="mdi-folder-image"/>
       </router-link>
     </div>
+
     <div class="navbox">
-      <div v-bind:is="toolbox" />
+      <div :is="toolbox" v-bind="toolboxProps" />
     </div>
 
   </q-drawer>
