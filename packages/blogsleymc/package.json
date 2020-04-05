@@ -1,6 +1,6 @@
 {
   "name": "@blogsleymc/blogsleymc",
-  "version": "0.1.20-alpha.0",
+  "version": "0.1.21-alpha.0",
   "description": "A Quasar Framework app",
   "productName": "Blogsley",
   "cordovaId": "org.cordova.quasar.app",
@@ -13,7 +13,7 @@
     "deploy": "quasar build -m pwa"
   },
   "dependencies": {
-    "@blocksley/quasar-app-extension-blocksley": "^0.1.20-alpha.0",
+    "@blocksley/quasar-app-extension-blocksley": "^0.1.21-alpha.0",
     "@quasar/extras": "^1.5.0",
     "apollo-boost": "^0.4.7",
     "apollo-cache-inmemory": "^1.6.5",
