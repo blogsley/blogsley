@@ -5,7 +5,6 @@
   "productName": "Blogsley",
   "cordovaId": "org.cordova.quasar.app",
   "author": "Kurtis Fields <kurtisfields@gmail.com>",
-  "private": true,
   "scripts": {
     "lint": "eslint --ext .js,.vue src",
     "test": "echo \"No test specified\" && exit 0",
