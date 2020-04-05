@@ -5,6 +5,9 @@
   "productName": "Blogsley",
   "cordovaId": "org.cordova.quasar.app",
   "author": "Kurtis Fields <kurtisfields@gmail.com>",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "lint": "eslint --ext .js,.vue src",
     "test": "echo \"No test specified\" && exit 0",
@@ -69,5 +72,5 @@
   "resolutions": {
     "ajv": "6.8.1"
   },
-  "gitHead": "2573880f7df419710c5fbaf6f693b7c90f641753"
+  "gitHead": "2404ff1b293bde77136d1cec41a70f44e3b7338e"
 }
