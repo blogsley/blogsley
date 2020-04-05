@@ -30,6 +30,7 @@
           </shell-fab>
         </shell-fab>
         -->
+        <q-btn flat fab-mini icon="build" />
         <tippy 
             interactive
             :animate-fill="false" 
@@ -397,11 +398,13 @@ shell-background()
 .shell-inner
   position: relative
   
+/*
 .shell-inner:after {
   content: "";
   display: table;
   clear: both;
 }
+*/
 
 .shell-bar {
   padding:0px

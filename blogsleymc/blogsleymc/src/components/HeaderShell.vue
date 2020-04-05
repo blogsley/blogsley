@@ -3,7 +3,7 @@
   <!--
   <q-btn
     flat
-    @click="leftDrawerOpen = !leftDrawerOpen"
+    @click="navDrawerOpen = !navDrawerOpen"
     aria-label="Menu"
     class="header-menu"
   >

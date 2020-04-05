@@ -1,9 +1,10 @@
 <template>
   <q-drawer
-    v-model="leftDrawerOpen"
+    v-model="toolDrawerOpen"
     content-class="drawer"
+    side="right"
   >
-      <div class="button-column" style="float: left; height: 100%">
+    <div class="button-column" style="float: right; height: 100%">
       <router-link to="/" :exact="true">
       <q-btn flat icon="home"/>
       </router-link>
@@ -17,8 +18,8 @@
       <q-btn flat icon="mdi-folder-image"/>
       </router-link>
     </div>
-    <div class="toolbox">
-      <div v-bind:is="toolbar" />
+    <div class="navbox">
+      <div v-bind:is="toolbox" />
     </div>
 
   </q-drawer>
@@ -27,7 +28,7 @@
 <script>
 import UiMixin from 'src/mixins/ui'
 export default {
-  name: 'LeftDrawer',
+  name: 'ToolDrawer',
   mixins: [UiMixin],
   data () {
     return {
@@ -45,7 +46,7 @@ export default {
 </script>
 
 <style lang="stylus">
-  .toolbox
+  .navbox
     white-space: nowrap;
     overflow: hidden;
     height: 100%;

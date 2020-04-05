@@ -9,7 +9,7 @@
 import UiMixin from 'src/mixins/ui'
 
 export default {
-  name: 'ToolboxShell',
+  name: 'NavboxShell',
   mixins: [
     UiMixin
   ],

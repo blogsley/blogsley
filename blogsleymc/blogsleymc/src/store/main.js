@@ -1,8 +1,9 @@
 const state = {
-  leftDrawerOpen: false,
+  navDrawerOpen: false,
   view: null,
   page: null,
-  toolbar: null,
+  navbox: null,
+  toolbox: null,
   header: null,
   footer: null,
   editor: null,
@@ -11,10 +12,12 @@ const state = {
 }
 
 const getters = {
-  leftDrawerOpen: (state) => state.leftDrawerOpen,
+  navDrawerOpen: (state) => state.navDrawerOpen,
+  toolDrawerOpen: (state) => state.toolDrawerOpen,
   view: (state) => state.view,
   page: (state) => state.page,
-  toolbar: (state) => state.toolbar,
+  navbox: (state) => state.navbox,
+  toolbox: (state) => state.toolbox,
   header: (state) => state.header,
   footer: (state) => state.footer,
   $editor: (state) => state.editor,
@@ -23,11 +26,17 @@ const getters = {
 }
 
 const actions = {
-  setLeftDrawerOpen: ({ commit }, value) => {
-    commit('leftDrawerOpen', value)
+  setNavDrawerOpen: ({ commit }, value) => {
+    commit('navDrawerOpen', value)
   },
-  toggleLeftDrawer: ({ commit, state }) => {
-    commit('leftDrawerOpen', !state.leftDrawerOpen)
+  toggleNavDrawer: ({ commit, state }) => {
+    commit('navDrawerOpen', !state.navDrawerOpen)
+  },
+  setToolDrawerOpen: ({ commit }, value) => {
+    commit('toolDrawerOpen', value)
+  },
+  toggleToolDrawer: ({ commit, state }) => {
+    commit('toolDrawerOpen', !state.toolDrawerOpen)
   },
   setView: ({ commit }, data) => {
     commit('view', data)
@@ -35,8 +44,11 @@ const actions = {
   setPage: ({ commit }, data) => {
     commit('page', data)
   },
-  setToolbar: (context, toolbar) => {
-    context.commit('toolbar', toolbar)
+  setNavbox: (context, navbox) => {
+    context.commit('navbox', navbox)
+  },
+  setToolbox: (context, toolbox) => {
+    context.commit('toolbox', toolbox)
   },
   setHeader: (context, header) => {
     context.commit('header', header)
@@ -56,8 +68,11 @@ const actions = {
 }
 
 const mutations = {
-  leftDrawerOpen: (state, data) => {
-    state.leftDrawerOpen = data
+  navDrawerOpen: (state, data) => {
+    state.navDrawerOpen = data
+  },
+  toolDrawerOpen: (state, data) => {
+    state.toolDrawerOpen = data
   },
   view: (state, data) => {
     state.view = data
@@ -65,11 +80,17 @@ const mutations = {
   page: (state, data) => {
     state.page = data
   },
-  toolbar: (state, toolbar) => {
-    if (state.toolbar === toolbar) {
+  navbox: (state, navbox) => {
+    if (state.navbox === navbox) {
       return
     }
-    state.toolbar = toolbar
+    state.navbox = navbox
+  },
+  toolbox: (state, toolbox) => {
+    if (state.toolbox === toolbox) {
+      return
+    }
+    state.toolbox = toolbox
   },
   header: (state, header) => {
     state.header = header

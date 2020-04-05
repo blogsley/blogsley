@@ -6,7 +6,7 @@
 
 <script>
 import { UiMixin, PageMixin } from 'src/mixins'
-import Toolbar from './Toolbar'
+import Navbox from './Navbox'
 import BlockChooser from 'components/BlockChooser'
 import ImageChooser from 'components/ImageChooser'
 
@@ -95,7 +95,7 @@ export default {
     },
     onSwitch () {
       this.setView(this)
-      this.setToolbar(Toolbar)
+      this.setNavbox(Navbox)
       var post = this.page
       if (post) {
         this.post = post

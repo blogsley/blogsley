@@ -9,7 +9,7 @@
   <!--
   <q-btn
     flat
-    @click="leftDrawerOpen = !leftDrawerOpen"
+    @click="navDrawerOpen = !navDrawerOpen"
     aria-label="Menu"
     class="header-menu"
   >
@@ -28,7 +28,7 @@
   <template v-slot:trigger>
     <q-btn flat icon="menu"/>
   </template>
-  <component :is="toolbar" />
+  <component :is="navbox" />
 </tippy>
 
   </q-toolbar>

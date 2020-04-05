@@ -10,7 +10,7 @@ import gql from 'graphql-tag'
 import { BlocksleyState, serialize, deserialize, render } from '@blocksley/blocksley'
 
 import { UiMixin, PageMixin } from 'src/mixins'
-import Toolbar from './Toolbar'
+import Navbox from './Navbox'
 import BlockChooser from 'components/BlockChooser'
 import ImageChooser from 'components/ImageChooser'
 
@@ -165,7 +165,7 @@ export default {
     },
     onSwitch () {
       this.setView(this)
-      this.setToolbar(Toolbar)
+      this.setNavbox(Navbox)
     }
   }
 }

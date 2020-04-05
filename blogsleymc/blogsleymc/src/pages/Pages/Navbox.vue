@@ -1,32 +1,34 @@
 <template>
-  <toolbox-shell>
+<div class="fit">
+  <navbox-shell>
 
     <q-list>
-      <q-item @click="$router.go(-1)" clickable>
+      <q-item to="/pages/create" exact>
         <q-item-section avatar>
-          <q-icon name="mdi-chevron-left" />
+          <q-icon name="note_add" />
         </q-item-section>
         <q-item-section>
-          <q-item-label>Back</q-item-label>
+          <q-item-label>Add Page</q-item-label>
         </q-item-section>
       </q-item>
     </q-list>
 
-  </toolbox-shell>
+  </navbox-shell>
+</div>
 </template>
 
 <script>
 import UiMixin from 'src/mixins/ui'
-import ToolboxShell from 'components/ToolboxShell'
+import NavboxShell from 'components/NavboxShell'
 
 export default {
-  name: 'DefaultToolbar',
+  name: 'DefaultNavbox',
   mixins: [
     UiMixin
   ],
   props: [],
   components: {
-    ToolboxShell
+    NavboxShell
   },
   methods: {
   }

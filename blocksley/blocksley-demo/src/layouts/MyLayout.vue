@@ -8,7 +8,7 @@
           flat
           dense
           round
-          @click="leftDrawerOpen = !leftDrawerOpen"
+          @click="navDrawerOpen = !navDrawerOpen"
           aria-label="Menu"
         >
           <q-icon name="menu" />
@@ -28,7 +28,7 @@
           flat
           dense
           round
-          @click="leftDrawerOpen = !leftDrawerOpen"
+          @click="navDrawerOpen = !navDrawerOpen"
           aria-label="Menu"
         >
           <q-icon name="menu" />
@@ -37,7 +37,7 @@
     </q-footer>
 
     <q-drawer
-      v-model="leftDrawerOpen"
+      v-model="navDrawerOpen"
       bordered
       content-class="bg-grey-2"
     >
@@ -50,7 +50,7 @@
           flat
           dense
           round
-          @click="leftDrawerOpen = !leftDrawerOpen"
+          @click="navDrawerOpen = !navDrawerOpen"
           aria-label="Menu"
         >
           <q-icon name="cancel" />
@@ -93,7 +93,7 @@ export default {
   name: 'MyLayout',
   data () {
     return {
-      leftDrawerOpen: this.$q.platform.is.desktop
+      navDrawerOpen: this.$q.platform.is.desktop
     }
   },
   methods: {

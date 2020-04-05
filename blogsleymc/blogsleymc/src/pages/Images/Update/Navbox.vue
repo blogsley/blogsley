@@ -1,51 +1,49 @@
 <template>
-  <toolbox-shell :showShortcuts="false">
-
+<div class="fit">
+  <navbox-shell>
     <q-list>
-      <q-item to="/users">
+      <q-item @click="$router.go(-1)" clickable>
         <q-item-section avatar>
-          <q-icon name="mdi-account-multiple" />
+          <q-icon name="mdi-chevron-left" />
         </q-item-section>
         <q-item-section>
-          <q-item-label>Users</q-item-label>
+          <q-item-label>Back</q-item-label>
         </q-item-section>
       </q-item>
-
-      <q-item to="/pages">
+      <q-item @click="view.save()" clickable>
         <q-item-section avatar>
-          <q-icon name="mdi-book-open-page-variant" />
+          <q-icon name="save" />
         </q-item-section>
         <q-item-section>
-          <q-item-label>Pages</q-item-label>
+          <q-item-label>Save</q-item-label>
         </q-item-section>
       </q-item>
-
-      <q-item to="/images">
+      <q-item @click="view.destroy()" clickable>
         <q-item-section avatar>
-          <q-icon name="mdi-folder-image" />
+          <q-icon name="delete" />
         </q-item-section>
         <q-item-section>
-          <q-item-label>Images</q-item-label>
+          <q-item-label>Delete</q-item-label>
         </q-item-section>
       </q-item>
-
     </q-list>
 
-  </toolbox-shell>
+  </navbox-shell>
+</div>
 </template>
 
 <script>
 import UiMixin from 'src/mixins/ui'
-import ToolboxShell from 'components/ToolboxShell'
+import NavboxShell from 'components/NavboxShell'
 
 export default {
-  name: 'HomeToolbox',
+  name: 'DefaultNavbox',
   mixins: [
     UiMixin
   ],
   props: [],
   components: {
-    ToolboxShell
+    NavboxShell
   },
   methods: {
   }

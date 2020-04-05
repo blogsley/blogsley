@@ -1,28 +1,35 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
+  <q-layout view="lHr Lpr lFr">
+
     <q-header :v-if="header" elevated reveal>
       <div v-bind:is="header" />
     </q-header>
-    <q-footer :v-if="footer" reveal>
-      <div v-bind:is="footer" />
-    </q-footer>
 
-    <left-drawer />
+    <nav-drawer />
 
     <q-page-container>
       <router-view/>
     </q-page-container>
+
+    <q-footer :v-if="footer" reveal>
+      <div v-bind:is="footer" />
+    </q-footer>
+
+    <tool-drawer />
+
   </q-layout>
 </template>
 
 <script>
 import { UiMixin } from 'src/mixins'
-import LeftDrawer from 'components/LeftDrawer'
+import NavDrawer from 'components/NavDrawer'
+import ToolDrawer from 'components/ToolDrawer'
 export default {
   name: 'DefaultLayout',
   mixins: [UiMixin],
   components: {
-    LeftDrawer
+    NavDrawer,
+    ToolDrawer
   },
   data () {
     return {
@@ -33,7 +40,8 @@ export default {
   methods: {
   },
   mounted () {
-    this.setLeftDrawerOpen(this.$q.platform.is.desktop)
+    this.setNavDrawerOpen(this.$q.platform.is.desktop)
+    this.setToolDrawerOpen(this.$q.platform.is.desktop)
   }
 
 }

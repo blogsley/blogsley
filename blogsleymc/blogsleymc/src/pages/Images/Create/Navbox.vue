@@ -1,6 +1,6 @@
 <template>
 <div class="fit">
-  <toolbox-shell>
+  <navbox-shell>
 
     <q-toolbar>
       <q-btn
@@ -17,34 +17,22 @@
       </q-toolbar-title>
 
     </q-toolbar>
-
-    <q-list>
-      <q-item @click="view.save()" clickable>
-        <q-item-section avatar>
-          <q-icon name="save" />
-        </q-item-section>
-        <q-item-section>
-          <q-item-label>Save</q-item-label>
-        </q-item-section>
-      </q-item>
-    </q-list>
-
-  </toolbox-shell>
+  </navbox-shell>
 </div>
 </template>
 
 <script>
 import UiMixin from 'src/mixins/ui'
-import ToolboxShell from 'components/ToolboxShell'
+import NavboxShell from 'components/NavboxShell'
 
 export default {
-  name: 'DefaultToolbar',
+  name: 'DefaultNavbox',
   mixins: [
     UiMixin
   ],
   props: [],
   components: {
-    ToolboxShell
+    NavboxShell
   },
   methods: {
   }

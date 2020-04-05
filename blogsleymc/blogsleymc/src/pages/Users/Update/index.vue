@@ -12,7 +12,7 @@
 
 <script>
 import { UiMixin, PageMixin } from 'src/mixins'
-import Toolbar from './Toolbar'
+import Navbox from './Navbox'
 import Header from './Header'
 
 import gql from 'graphql-tag'
@@ -90,7 +90,7 @@ export default {
     },
     onSwitch () {
       this.setView(this)
-      this.setToolbar(Toolbar)
+      this.setNavbox(Navbox)
       this.setHeader(Header)
     }
   }

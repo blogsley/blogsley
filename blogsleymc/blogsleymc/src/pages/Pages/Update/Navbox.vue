@@ -1,5 +1,5 @@
 <template>
-  <toolbox-shell>
+  <navbox-shell>
 
     <q-list>
       <q-item @click="$router.go(-1)" clickable>
@@ -44,21 +44,21 @@
       </q-item>
     </q-list>
 
-  </toolbox-shell>
+  </navbox-shell>
 </template>
 
 <script>
 import UiMixin from 'src/mixins/ui'
-import ToolboxShell from 'components/ToolboxShell'
+import NavboxShell from 'components/NavboxShell'
 
 export default {
-  name: 'DefaultToolbar',
+  name: 'DefaultNavbox',
   mixins: [
     UiMixin
   ],
   props: [],
   components: {
-    ToolboxShell
+    NavboxShell
   },
   methods: {
   }

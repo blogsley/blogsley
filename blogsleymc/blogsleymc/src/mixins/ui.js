@@ -2,18 +2,27 @@ import { mapGetters, mapActions } from 'vuex'
 
 export default {
   computed: {
-    leftDrawerOpen: {
+    navDrawerOpen: {
       get: function () {
-        return this.$store.getters.leftDrawerOpen
+        return this.$store.getters.navDrawerOpen
       },
       set: function (val) {
-        this.$store.commit('leftDrawerOpen', val)
+        this.$store.commit('navDrawerOpen', val)
+      }
+    },
+    toolDrawerOpen: {
+      get: function () {
+        return this.$store.getters.toolDrawerOpen
+      },
+      set: function (val) {
+        this.$store.commit('toolDrawerOpen', val)
       }
     },
     ...mapGetters([
       'view',
       'page',
-      'toolbar',
+      'navbox',
+      'toolbox',
       'header',
       'footer',
       '$editor',
@@ -25,9 +34,12 @@ export default {
     ...mapActions([
       'setView',
       'setPage',
-      'toggleLeftDrawer',
-      'setLeftDrawerOpen',
-      'setToolbar',
+      'toggleNavDrawer',
+      'setNavDrawerOpen',
+      'toggleToolDrawer',
+      'setToolDrawerOpen',
+      'setNavbox',
+      'setToolbox',
       'setHeader',
       'setFooter',
       'setEditor',

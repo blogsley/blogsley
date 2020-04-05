@@ -9,7 +9,7 @@ import gql from 'graphql-tag'
 const directives = process.env.STANDALONE ? '@client' : ''
 
 import { UiMixin, PageMixin } from 'src/mixins'
-import Toolbar from './Toolbar'
+import Navbox from './Navbox'
 import Header from './Header'
 import Form from '../Form'
 
@@ -85,7 +85,7 @@ export default {
       })
     },
     onSwitch () {
-      this.setToolbar(Toolbar)
+      this.setNavbox(Navbox)
       this.setHeader(Header)
     }
   }

@@ -1,34 +1,33 @@
 <template>
 <div class="fit">
-  <toolbox-shell>
-
+  <navbox-shell>
     <q-list>
-      <q-item to="/images/create" exact>
+      <q-item to="/users/create" exact>
         <q-item-section avatar>
-          <q-icon name="mdi-image-plus" />
+          <q-icon name="mdi-account-plus-outline" />
         </q-item-section>
         <q-item-section>
-          <q-item-label>Add Image</q-item-label>
+          <q-item-label>Add User</q-item-label>
         </q-item-section>
       </q-item>
     </q-list>
 
-  </toolbox-shell>
+  </navbox-shell>
 </div>
 </template>
 
 <script>
 import UiMixin from 'src/mixins/ui'
-import ToolboxShell from 'components/ToolboxShell'
+import NavboxShell from 'components/NavboxShell'
 
 export default {
-  name: 'DefaultToolbar',
+  name: 'DefaultNavbox',
   mixins: [
     UiMixin
   ],
   props: [],
   components: {
-    ToolboxShell
+    NavboxShell
   },
   methods: {
   }

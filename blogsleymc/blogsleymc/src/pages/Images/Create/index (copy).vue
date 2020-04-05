@@ -13,7 +13,7 @@
 <script>
 
 import { UiMixin, PageMixin } from 'src/mixins'
-import Toolbar from './Toolbar'
+import Navbox from './Navbox'
 
 export default {
   name: 'CreateImage',
@@ -42,7 +42,7 @@ export default {
   methods: {
     onSwitch () {
       this.setView(this)
-      this.setToolbar(Toolbar)
+      this.setNavbox(Navbox)
     }
   }
 }

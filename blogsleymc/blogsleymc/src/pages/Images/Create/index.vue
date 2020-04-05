@@ -7,7 +7,7 @@
 
 <script>
 import { UiMixin, PageMixin } from 'src/mixins'
-import Toolbar from './Toolbar'
+import Navbox from './Navbox'
 import ImageUploader from 'components/ImageUploader'
 import StandAloneImageUploader from 'components/StandAloneImageUploader'
 
@@ -38,7 +38,7 @@ export default {
   methods: {
     onSwitch () {
       this.setView(this)
-      this.setToolbar(Toolbar)
+      this.setNavbox(Navbox)
     }
   }
 }

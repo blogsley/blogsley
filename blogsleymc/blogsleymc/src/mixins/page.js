@@ -1,4 +1,4 @@
-import Toolbar from 'components/DefaultToolbar'
+import Navbox from 'components/DefaultNavbox'
 import Footer from 'components/DefaultFooter'
 
 export default {
@@ -19,7 +19,7 @@ export default {
   },
   methods: {
     onSwitch () {
-      this.setToolbar(Toolbar)
+      this.setNavbox(Navbox)
       this.setFooter(Footer)
     }
   }
