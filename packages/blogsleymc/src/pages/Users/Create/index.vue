@@ -5,6 +5,7 @@
       <q-input outlined autocomplete="email" v-model="user.email" label="Email" />
       <q-input outlined autocomplete="firstname" v-model="user.firstName" label="First Name" />
       <q-input outlined autocomplete="lastname" v-model="user.lastName" label="Last Name" />
+      <q-input outlined autocomplete="password" v-model="user.password" label="Password" />
     </div>
   </q-page>
 </template>
@@ -29,7 +30,8 @@ export default {
         username: '',
         email: '',
         firstName: '',
-        lastName: ''
+        lastName: '',
+        password: ''
       }
     }
   },

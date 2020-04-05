@@ -18,7 +18,7 @@ module.exports = function (ctx) {
       'lazyload',
       'tippy',
       'resizable',
-      'blogsley'
+      'blogsleymc'
     ],
 
     css: [

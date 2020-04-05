@@ -1,4 +1,4 @@
-# Blogsley :moon:
+# BlogsleyMC :moon: :cyclone:
 
 A GraphQL powered CMS frontend for the JAMstack!!!
 
@@ -10,11 +10,11 @@ A GraphQL powered CMS frontend for the JAMstack!!!
 
 2. Clone the repository:
 
-        git clone https://github.com/blogsley/blogsley.git
+        git clone https://github.com/blogsley/blogsleymc.git
         
 3. Navigate to the new directory which contains the repository.
 
-        cd blogsley
+        cd blogsleymc
 
         
 6. Install required packages:
@@ -26,7 +26,7 @@ A GraphQL powered CMS frontend for the JAMstack!!!
 
 1. Export the SERVER_URL environment variable
 
-        cd blogsley
+        cd blogsleymc
         export SERVER_URL=http://localhost:5000
         
 2. Launch Blocksley in development mode:
