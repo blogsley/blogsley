@@ -1,6 +1,6 @@
 {
   "name": "@blocksley/blocksley-demo",
-  "version": "0.1.26-alpha.0",
+  "version": "0.1.27-alpha.0",
   "description": "Blocksley Demo",
   "productName": "Blocksley Demo",
   "cordovaId": "org.cordova.quasar.app",
@@ -15,7 +15,7 @@
     "test": "echo \"No test specified\" && exit 0"
   },
   "dependencies": {
-    "@blocksley/quasar-app-extension-blocksley": "^0.1.26-alpha.0",
+    "@blocksley/quasar-app-extension-blocksley": "^0.1.27-alpha.0",
     "@quasar/extras": "^1.5.0",
     "axios": "^0.19.1",
     "quasar": "^1.7.4"
