@@ -1,6 +1,8 @@
-Blocksley (@blocksley/blocksley)
+Blocksley :black_square_button: 
 ===
 
-> Please note that Blocksley is in alpha state.
+> Please note that blocksley is in alpha state.
 
-This is the main library for a block editor that uses Quasar
+Block Editor for the JAMstack using Quasar
+
+Demo at [https://blocksley.netlify.com/](https://blocksley.netlify.com/)
