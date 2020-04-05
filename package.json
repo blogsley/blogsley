@@ -11,6 +11,7 @@
   "resolutions": {
   },
   "workspaces": [
-    "packages/*"
+    "blogsleymc/*",
+    "blocksley/*"
   ]
 }
