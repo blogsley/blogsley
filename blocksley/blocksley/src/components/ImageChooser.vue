@@ -18,7 +18,7 @@
 
 <script>
 import ImageCard from './ImageCard'
-import { Image } from '../models'
+import { Image } from '../blocks'
 
 export default {
   name: 'ImageChooser',

@@ -18,7 +18,7 @@ const renderers = {
   'quote': new Quote()
 }
 
-export function render (model) {
-  const renderer = renderers[model.type]
-  return renderer.render(model)
+export function render (block) {
+  const renderer = renderers[block.type]
+  return renderer.render(block)
 }

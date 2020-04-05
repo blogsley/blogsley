@@ -1,19 +1,19 @@
-// TODO:FIXME:  importing kits and models here to avoid circular references
+// TODO:FIXME:  importing kits and blocks here to avoid circular references
 import kits from '../kits'
-import models from '../models'
+import blocks from '../blocks'
 
 export const fake = {
   kits: kits,
-  models: models
+  blocks: blocks
 }
 
 const state = {
-  models: null,
+  blocks: null,
   kits: null,
 }
 
 const getters = {
-  models: (state) => state.models,
+  blocks: (state) => state.blocks,
   kits: (state) => state.kits,
 }
 

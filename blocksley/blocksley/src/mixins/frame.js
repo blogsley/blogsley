@@ -4,16 +4,16 @@ export default {
   },
   methods: {
     add () {
-      this.$emit('action', { type: 'add', model: this.model })
+      this.$emit('action', { type: 'add', block: this.block })
     },
     remove () {
-      this.$emit('action', { type: 'remove', model: this.model })
+      this.$emit('action', { type: 'remove', block: this.block })
     },
     floatLeft () {
-      this.model.class = ['float-left']
+      this.block.class = ['float-left']
     },
     floatRight () {
-      this.model.class = ['float-right']
+      this.block.class = ['float-right']
     }
   }
 }

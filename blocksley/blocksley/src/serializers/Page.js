@@ -1,6 +1,6 @@
-import Model from './Model'
-import Page from '../models/Page'
-export default class PageSerializer extends Model {
+import Block from './Block'
+import Page from '../blocks/Page'
+export default class PageSerializer extends Block {
   constructor () {
     super()
   }

@@ -3,15 +3,15 @@ import kits from '../kits'
 export default {
   template: `
   <div>
-    <component v-bind:is="vu" :frame="this" :model="model" :class="model.class" @action="this.onAction"/>
+    <component v-bind:is="vu" :frame="this" :block="block" :class="block.class" @action="this.onAction"/>
   </div>`,
   props: ['node', 'updateAttrs', 'view', 'getPos'],
   data () {
     return {
       vu: null,
       isActive: false,
-      // model: this.node.type.spec.createModel(this.node)
-      model: this.node.model ? this.node.model : this.node.model = this.node.type.spec.createModel(this.node)
+      // block: this.node.type.spec.createBlock(this.node)
+      block: this.node.block ? this.node.block : this.node.block = this.node.type.spec.createBlock(this.node)
     }
   },
   components: {
@@ -20,29 +20,29 @@ export default {
   },
   mounted () {
     console.log('e-frame mounted')
-    console.log(this.model)
+    console.log(this.block)
     console.log(this.node)
     console.log(this.view)
-    if (this.model.state === 'create') {
-      if (kits[this.model.type].Creator) {
-        this.vu = kits[this.model.type].Creator
+    if (this.block.state === 'create') {
+      if (kits[this.block.type].Creator) {
+        this.vu = kits[this.block.type].Creator
       } else {
-        console.log(this.model.type)
-        this.model.state = 'normal'
-        this.vu = kits[this.model.type].Editor
+        console.log(this.block.type)
+        this.block.state = 'normal'
+        this.vu = kits[this.block.type].Editor
       }
     } else {
-      this.vu = kits[this.model.type].Viewer
+      this.vu = kits[this.block.type].Viewer
     }
   },
   beforeDestroy () {
     console.log('e-frame destroyed')
-    console.log(this.model)
+    console.log(this.block)
     console.log(this.node)
   },
   methods: {
     use (toolName) {
-      this.vu = kits[this.model.type][toolName]
+      this.vu = kits[this.block.type][toolName]
     },
     onAction (action) {
       this.$emit('action', action)

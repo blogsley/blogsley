@@ -1,6 +1,6 @@
 <template>
   <div class="blocksley-editor">
-    <frame ref="frame" :root="true" :model="model"/>
+    <frame ref="frame" :root="true" :block="block"/>
   </div>
 </template>
 
@@ -28,7 +28,7 @@ export default {
     }
   },
   computed: {
-    model: function () { return this.state.model }
+    block: function () { return this.state.block }
   },
   provide() {
     return {

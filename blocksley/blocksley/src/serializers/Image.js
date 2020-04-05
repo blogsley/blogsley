@@ -1,6 +1,6 @@
-import Model from './Model'
-import Image from '../models/Image'
-export default class ImageSerializer extends Model {
+import Block from './Block'
+import Image from '../blocks/Image'
+export default class ImageSerializer extends Block {
   constructor () {
     super()
   }

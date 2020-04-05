@@ -30,13 +30,13 @@ type PostEdge {
 
 type Post {
   title: String!
-  model: String!
+  block: String!
   body: String!
 }
 
 input PostInput {
   title: String!
-  model: String!
+  block: String!
   body: String!
 }
 

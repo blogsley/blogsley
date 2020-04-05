@@ -1,5 +1,5 @@
-import Model from './Model'
-export default class HeadingRenderer extends Model {
+import Block from './Block'
+export default class HeadingRenderer extends Block {
   constructor () {
     super()
   }

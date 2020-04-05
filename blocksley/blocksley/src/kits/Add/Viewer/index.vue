@@ -40,7 +40,7 @@
 export default {
   name: 'AddBlockViewer',
   mixins: [],
-  props: ['frame', 'model'],
+  props: ['frame', 'block'],
   inject: ['state'],
   components: {
   },
@@ -61,7 +61,7 @@ export default {
     insertBlock (block) {
       console.log('insertBlock: ', block.title)
       this.success = true
-      this.$emit('action', { type: 'new', kind: block.name, model: this.model })
+      this.$emit('action', { type: 'new', kind: block.name, block: this.block })
     },
     validate() {
       if (!this.success) {
@@ -71,13 +71,13 @@ export default {
 
     /*
     newParagraph () {
-      this.$emit('action', { type: 'new', kind: 'paragraph', model: this.model })
+      this.$emit('action', { type: 'new', kind: 'paragraph', block: this.block })
     },
     newList () {
-      this.$emit('action', { type: 'new', kind: 'list', model: this.model })
+      this.$emit('action', { type: 'new', kind: 'list', block: this.block })
     },
     newImage () {
-      this.$emit('action', { type: 'new', kind: 'image', model: this.model })
+      this.$emit('action', { type: 'new', kind: 'image', block: this.block })
     }*/
   }
 }

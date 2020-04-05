@@ -1,6 +1,6 @@
-import Model from './Model'
+import Block from './Block'
 
-export default class Rich extends Model {
+export default class Rich extends Block {
   constructor (type, options) {
     super(type, options)
     this.content = null

@@ -1,6 +1,6 @@
-import Model from './Model'
-import Heading from '../models/Heading'
-export default class HeadingSerializer extends Model {
+import Block from './Block'
+import Heading from '../blocks/Heading'
+export default class HeadingSerializer extends Block {
   constructor () {
     super()
   }

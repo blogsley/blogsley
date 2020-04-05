@@ -1,6 +1,6 @@
 import { Node } from 'tiptap'
 import EFrame from '../components/EFrame'
-import Image from '../models/Image'
+import Image from '../blocks/Image'
 
 export default class ImageNode extends Node {
   constructor(options = {}) {
@@ -51,13 +51,13 @@ export default class ImageNode extends Node {
         class: node.attrs.class
       }], */
       toDOM: node => ['img', {
-        src: node.model.src,
-        width: node.model.width,
-        height: node.model.height,
-        class: node.model.class,
+        src: node.block.src,
+        width: node.block.width,
+        height: node.block.height,
+        class: node.block.class,
         style: 'object-fit:cover'
       }],
-      createModel (node) {
+      createBlock (node) {
         return new Image({
           src: node.attrs.src,
           class: node.attrs.class,

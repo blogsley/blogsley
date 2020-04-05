@@ -1,6 +1,6 @@
-import Model from './Model'
-import Html from '../models/Html'
-export default class HtmlSerializer extends Model {
+import Block from './Block'
+import Html from '../blocks/Html'
+export default class HtmlSerializer extends Block {
   constructor () {
     super()
   }

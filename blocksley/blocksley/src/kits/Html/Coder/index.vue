@@ -30,7 +30,7 @@ import CoderShell from '../../../components/CoderShell'
 export default {
   name: 'HtmlBlockEditor',
   mixins: [ BlockEditorMixin, CodeEditorMixin ],
-  props: ['frame', 'model'],
+  props: ['frame', 'block'],
   inject: ['state'],
   components: {
     CoderShell,
@@ -54,7 +54,7 @@ export default {
       tabSize: 4
     })
 
-    const html = prettier.format(this.model.html, {
+    const html = prettier.format(this.block.html, {
       parser: "html",
       plugins: [parserHtml]
     })

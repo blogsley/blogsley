@@ -8,7 +8,7 @@ function arrayMove (arr, oldIndex, newIndex) {
   return arr
 }
 
-class Model {
+class Block {
   constructor (type, options) {
     this.type = type
     this.id = nanoid()
@@ -39,12 +39,12 @@ class Model {
   addChild (child) {
     this.children.push(child)
   }
-  insertBefore (model, child) {
-    const ndx = this.children.indexOf(model)
+  insertBefore (block, child) {
+    const ndx = this.children.indexOf(block)
     this.children.splice(ndx, 0, child)
   }
-  insertAfter (model, child) {
-    const ndx = this.children.indexOf(model) + 1
+  insertAfter (block, child) {
+    const ndx = this.children.indexOf(block) + 1
     this.children.splice(ndx, 0, child)
   }
   removeChild (child) {
@@ -62,8 +62,8 @@ class Model {
         break
     }
   }
-  replaceChild (model, child) {
-    const ndx = this.children.indexOf(model)
+  replaceChild (block, child) {
+    const ndx = this.children.indexOf(block)
     this.children.splice(ndx, 1, child)
   }
   stringify (options) {
@@ -75,4 +75,4 @@ class Model {
     } 
   }
 }
-export default Model
+export default Block

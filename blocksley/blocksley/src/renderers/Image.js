@@ -1,11 +1,11 @@
-import Model from './Model'
-export default class ImageRenderer extends Model {
+import Block from './Block'
+export default class ImageRenderer extends Block {
   constructor () {
     super()
   }
-  render (model) {
+  render (block) {
     const html = `
-    <img src=${model.src} width=${model.width} height=${model.height} style="object-fit:cover"/>
+    <img src=${block.src} width=${block.width} height=${block.height} style="object-fit:cover"/>
     `
     return html
   }

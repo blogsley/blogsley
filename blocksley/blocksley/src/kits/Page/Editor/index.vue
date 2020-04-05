@@ -1,15 +1,15 @@
 <template>
   <div class="page-editor">
     <editor-shell :vu="this" class="page-editor">
-      <draggable v-model="model.children"
+      <draggable v-model="block.children"
         group="blocks"
         handle=".grippy"
         @start="onDragStart()"
         @end="onDragEnd()"
       >
-        <frame v-for="child in model.children"
+        <frame v-for="child in block.children"
           :key="child.id"
-          :model="child"
+          :block="child"
           class="noselect"
           @action="onAction"
           />
@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import { Add, List, Image, Paragraph, Heading, Html, Quote } from '../../../models'
+import { Add, List, Image, Paragraph, Heading, Html, Quote } from '../../../blocks'
 
 import { BlockEditorMixin } from '../../../mixins'
 import Frame from '../../../components/Frame'
@@ -28,7 +28,7 @@ import EditorShell from '../../../components/EditorShell'
 export default {
   name: 'PageEditor',
   mixins: [ BlockEditorMixin ],
-  props: ['frame', 'model'],
+  props: ['frame', 'block'],
   components: {
     Frame,
     EditorShell
@@ -51,43 +51,43 @@ export default {
       console.log('drag end')
     },
     onAction (action) {
-      var model
+      var block
       console.log(action)
       switch (action.type) {
         case 'add':
-          model = new Add()
-          this.model.insertAfter(action.model, model)
+          block = new Add()
+          this.block.insertAfter(action.block, block)
           break
         case 'remove':
-          this.model.removeChild(action.model)
+          this.block.removeChild(action.block)
           break
         case 'move':
-          this.model.moveChild(action.model, action.to)
+          this.block.moveChild(action.block, action.to)
           break
         case 'new':
           switch (action.kind) {
             case 'paragraph':
-              model = new Paragraph()
+              block = new Paragraph()
               break
             case 'heading':
-              model = new Heading()
+              block = new Heading()
               break
             case 'list':
-              model = new List()
+              block = new List()
               break
             case 'image':
-              model = new Image()
+              block = new Image()
               break
             case 'html':
-              model = new Html()
+              block = new Html()
               break
             case 'quote':
-              model = new Quote()
+              block = new Quote()
               break
           }
-          model.state = 'create'
-          // this.model.replaceChild(action.model, model)
-          this.model.insertAfter(action.model, model)
+          block.state = 'create'
+          // this.block.replaceChild(action.block, block)
+          this.block.insertAfter(action.block, block)
           break
       }
     }

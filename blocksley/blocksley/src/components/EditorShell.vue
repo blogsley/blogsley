@@ -115,7 +115,7 @@ export default {
   data () {
     return {
       frame: { grippy: false },
-      model: {},
+      block: {},
       view: null,
       parent: null,
       $_activeChild: null,
@@ -167,8 +167,8 @@ export default {
   },
   mounted () {
     this.frame = this.vu.frame
-    this.model = this.vu.model
-    // console.log(this.model)
+    this.block = this.vu.block
+    // console.log(this.block)
     const editor = this.editor
     if (editor) {
       this.view = editor.view
@@ -199,7 +199,7 @@ export default {
     insertBlock (block) {
       console.log('insertBlock: ', block.title)
       this.success = true
-      this.frame.$emit('action', { type: 'new', kind: block.name, model: this.model })
+      this.frame.$emit('action', { type: 'new', kind: block.name, block: this.block })
     },
     onAction (action) {
       this.$emit('action', action)

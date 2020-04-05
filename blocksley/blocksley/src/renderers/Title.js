@@ -1,10 +1,10 @@
-import Model from './Model'
-export default class TitleRenderer extends Model {
+import Block from './Block'
+export default class TitleRenderer extends Block {
   constructor () {
     super()
   }
-  render (model) {
-    // return `<h1>${model.value}</h1>`
+  render (block) {
+    // return `<h1>${block.value}</h1>`
     return ''
   }
 }

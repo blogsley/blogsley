@@ -1,6 +1,6 @@
 <template>
   <q-page>
-    <blocksley :model="model"/>
+    <blocksley :block="block"/>
   </q-page>
 </template>
 
@@ -8,7 +8,7 @@
 </style>
 
 <script>
-import { Title, List, Image, Paragraph, Html, Page } from '@blocksley/blocksley/src/models'
+import { Title, List, Image, Paragraph, Html, Page } from '@blocksley/blocksley/src/blocks'
 import { PageMixin } from '@blocksley/blocksley/src/mixins'
 
 export default {
@@ -18,7 +18,7 @@ export default {
   },
   data () {
     return {
-      model: new Page([
+      block: new Page([
         new Title(),
         new Paragraph('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'),
         new Image('statics/journal-on-desk.jpg', { title: 'Journal on Desk' }),
@@ -33,9 +33,9 @@ export default {
     console.log(this.$blocksley)
     console.log(this.$page)
     if (!this.$page) {
-      this.$page = this.model
+      this.$page = this.block
     } else {
-      this.model = this.$page
+      this.block = this.$page
     }
     console.log(this.$page)
   }

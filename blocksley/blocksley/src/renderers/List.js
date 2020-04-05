@@ -1,5 +1,5 @@
-import Model from './Model'
-export default class ListRenderer extends Model {
+import Block from './Block'
+export default class ListRenderer extends Block {
   constructor () {
     super()
   }

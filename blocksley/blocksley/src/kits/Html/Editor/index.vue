@@ -26,7 +26,7 @@ import EditorShell from '../../../components/EditorShell'
 export default {
   name: 'HtmlBlockEditor',
   mixins: [ BlockEditorMixin, RichEditorMixin ],
-  props: ['frame', 'model'],
+  props: ['frame', 'block'],
   inject: ['state'],
   components: {
     EditorContent,

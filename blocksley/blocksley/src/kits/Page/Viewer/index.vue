@@ -13,13 +13,13 @@ import ViewerShell from '../../../components/ViewerShell'
 export default {
   name: 'PageViewer',
   mixins: [ BlockViewerMixin ],
-  props: ['frame', 'model'],
+  props: ['frame', 'block'],
   components: {
     ViewerShell
   },
   data () {
     return {
-      body: render(this.model)
+      body: render(this.block)
     }
   },
   mounted () {

@@ -8,10 +8,10 @@ export default {
   },
   methods: {
     floatLeft () {
-      this.model.class = ['block-left']
+      this.block.class = ['block-left']
     },
     floatRight () {
-      this.model.class = ['block-right']
+      this.block.class = ['block-right']
     }
   }
 }

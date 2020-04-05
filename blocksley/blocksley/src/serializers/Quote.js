@@ -1,6 +1,6 @@
-import Model from './Model'
-import Quote from '../models/Quote'
-export default class QuoteSerializer extends Model {
+import Block from './Block'
+import Quote from '../blocks/Quote'
+export default class QuoteSerializer extends Block {
   constructor () {
     super()
   }

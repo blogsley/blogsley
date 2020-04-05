@@ -1,6 +1,6 @@
-import Model from './Model'
+import Block from './Block'
 
-export default class Image extends Model {
+export default class Image extends Block {
   constructor (options) {
     super('image', options)
     // this.src = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=='

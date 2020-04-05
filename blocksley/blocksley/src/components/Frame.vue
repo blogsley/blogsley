@@ -1,5 +1,5 @@
 <template>
-  <component :is="vu" :frame="this" :model="model" :class="model.class" @action="this.onAction"/>
+  <component :is="vu" :frame="this" :block="block" :class="block.class" @action="this.onAction"/>
 </template>
 
 <script>
@@ -15,7 +15,7 @@ export default {
       type: Boolean,
       default: false
     },
-    model: {
+    block: {
       default () {
         return {
           type: 'html',
@@ -36,9 +36,9 @@ export default {
   computed: {
   },
   mounted () {
-    console.log(this.model)
-    if (this.model.state === 'create') {
-      if (kits[this.model.type].Creator) {
+    console.log(this.block)
+    if (this.block.state === 'create') {
+      if (kits[this.block.type].Creator) {
         this.use('Creator')
       } else {
         this.use('Editor')
@@ -51,7 +51,7 @@ export default {
   },
   methods: {
     use (toolName) {
-      this.vu = kits[this.model.type][toolName]
+      this.vu = kits[this.block.type][toolName]
     },
     onAction (action) {
       this.$emit('action', action)
@@ -63,13 +63,13 @@ export default {
       this.use('Viewer')
     },
     add () {
-      this.$emit('action', { type: 'add', model: this.model })
+      this.$emit('action', { type: 'add', block: this.block })
     },
     remove () {
-      this.$emit('action', { type: 'remove', model: this.model })
+      this.$emit('action', { type: 'remove', block: this.block })
     },
     move (to) {
-      this.$emit('action', { type: 'move', model: this.model, to })
+      this.$emit('action', { type: 'move', block: this.block, to })
     },
     onDragStart () {
       console.log('frame drag started')

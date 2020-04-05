@@ -1,6 +1,6 @@
 <template>
   <viewer-shell :vu="this">
-    <div v-if="this.model.value" v-html="`<h1>${this.model.value}</h1>`"/>
+    <div v-if="this.block.value" v-html="`<h1>${this.block.value}</h1>`"/>
     <div v-else style="opacity:.55"><h1>Your title here ...</h1></div>
   </viewer-shell>
 </template>
@@ -11,7 +11,7 @@ import { BlockViewerMixin } from '../../../mixins'
 export default {
   name: 'TitleBlockViewer',
   mixins: [ BlockViewerMixin ],
-  props: ['frame', 'model'],
+  props: ['frame', 'block'],
   components: {
     ViewerShell
   },

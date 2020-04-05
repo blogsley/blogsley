@@ -1,6 +1,6 @@
 import { Node } from 'tiptap'
 import Frame from '../Frame'
-import { Image, Html } from '../models'
+import { Image, Html } from '../blocks'
 
 const blockTypes = {
   'image': Image,

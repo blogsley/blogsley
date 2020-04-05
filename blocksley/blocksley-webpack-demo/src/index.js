@@ -6,11 +6,11 @@ import store from './store'
 import '@blocksley/blocksley/src/css/blocksley.styl'
 import blocksley, { Blocksley } from '@blocksley/blocksley'
 
-import { Title, List, Image, Paragraph, Html, Page } from '@blocksley/blocksley/src/models'
+import { Title, List, Image, Paragraph, Html, Page } from '@blocksley/blocksley/src/blocks'
 
 Vue.use(blocksley, {})
 
-const model = new Page([
+const block = new Page([
   new Title(),
   new Paragraph('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'),
   new Image('statics/journal-on-desk.jpg', { title: 'Journal on Desk' }),
@@ -23,7 +23,7 @@ new Vue({
   store,
   render: h => h(Blocksley, {
     props: {
-      model
+      block
     }
   })
 }).$mount('#app')

@@ -22,7 +22,7 @@ import ImageChooser from '../../../components/ImageChooser'
 export default {
   name: 'ImageBlockCreator',
   mixins: [ BlockCreatorMixin ],
-  props: ['frame', 'model'],
+  props: ['frame', 'block'],
   inject: ['state'],
   components: {
     EditorShell,
@@ -44,13 +44,13 @@ export default {
     },
     insertImage (image) {
       console.log('insertImage: ', image)
-      this.model.state = 'normal'
-      this.model.src = image.src
+      this.block.state = 'normal'
+      this.block.src = image.src
       this.showImgChooser = false
       this.frame.edit()
     },
     validate() {
-      if (this.model.state != 'normal') {
+      if (this.block.state != 'normal') {
         this.frame.remove()
       }
     }

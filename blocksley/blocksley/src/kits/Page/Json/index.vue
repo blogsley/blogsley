@@ -1,7 +1,7 @@
 <template>
   <viewer-shell :vu="this">
-    <!-- <div v-html="model.html" class="viewer__content"/> -->
-    <pre><code>{{model.stringify()}}</code></pre>
+    <!-- <div v-html="block.html" class="viewer__content"/> -->
+    <pre><code>{{block.stringify()}}</code></pre>
   </viewer-shell>
 </template>
 
@@ -13,7 +13,7 @@ import ViewerShell from '../../../components/ViewerShell'
 export default {
   name: 'PageJson',
   mixins: [ BlockViewerMixin ],
-  props: ['frame', 'model'],
+  props: ['frame', 'block'],
   components: {
     ViewerShell
   },

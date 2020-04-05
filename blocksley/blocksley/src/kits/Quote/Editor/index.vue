@@ -18,7 +18,7 @@ import { BlockEditorMixin, RichEditorMixin } from '../../../mixins'
 export default {
   name: 'QuoteEditor',
   mixins: [ BlockEditorMixin, RichEditorMixin ],
-  props: ['frame', 'model'],
+  props: ['frame', 'block'],
   components: {
     EditorShell,
     EditorContent,

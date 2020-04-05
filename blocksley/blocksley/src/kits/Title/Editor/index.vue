@@ -3,7 +3,7 @@
   <editor-shell :vu="this">
     <span slot="title">Title</span>
     <q-input
-      v-model="model.value"
+      v-model="block.value"
       :autofocus="true"
       borderless
       placeholder="Your title here ..."
@@ -19,7 +19,7 @@ import { BlockEditorMixin } from '../../../mixins'
 export default {
   name: 'TitleBlockEditor',
   mixins: [ BlockEditorMixin ],
-  props: ['frame', 'model'],
+  props: ['frame', 'block'],
   components: {
     EditorShell
   },
@@ -30,7 +30,7 @@ export default {
   mounted () {
   },
   beforeDestroy () {
-    this.model.html = `<h1>${this.model.value}</h1>`
+    this.block.html = `<h1>${this.block.value}</h1>`
   },
   methods: {
   }

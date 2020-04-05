@@ -32,7 +32,7 @@ export default {
     }
   },
   computed: {
-    model: function () { return this.state.model }
+    block: function () { return this.state.block }
   },
   apollo: {
     post: {
@@ -41,7 +41,7 @@ export default {
           post(id: $id) ${directives} {
             id
             title
-            model
+            block
             body
           }
         }`,
@@ -53,7 +53,7 @@ export default {
       update (data) {
         const post = data.post
         console.log(post)
-        this.state.model = deserialize(JSON.parse(post.model))
+        this.state.block = deserialize(JSON.parse(post.block))
         return post
       },
       subscribeToMore: {
@@ -92,13 +92,13 @@ export default {
       this.$router.push(`/pages/${this.post.id}/json`)
     },
     save () {
-      this.model.freeze()
-      const model = serialize(this.model)
-      const body = render(this.model)
-      const title = this.state.findModelByType('title').value
+      this.block.freeze()
+      const block = serialize(this.block)
+      const body = render(this.block)
+      const title = this.state.findBlockByType('title').value
       const postInput = {
         title,
-        model,
+        block,
         body
       }
       console.log(postInput)
@@ -119,13 +119,13 @@ export default {
       this.$q.notify('Page Saved')
     },
     publish () {
-      this.model.freeze()
-      const model = serialize(this.model)
-      const body = render(this.model)
-      const title = this.state.findModelByType('title').value
+      this.block.freeze()
+      const block = serialize(this.block)
+      const body = render(this.block)
+      const title = this.state.findBlockByType('title').value
       const postInput = {
         title,
-        model,
+        block,
         body
       }
       console.log(postInput)

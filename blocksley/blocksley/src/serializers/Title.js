@@ -1,6 +1,6 @@
-import Model from './Model'
-import Title from '../models/Title'
-export default class TitleSerializer extends Model {
+import Block from './Block'
+import Title from '../blocks/Title'
+export default class TitleSerializer extends Block {
   constructor () {
     super()
   }

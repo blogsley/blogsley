@@ -1,6 +1,6 @@
-import Model from './Model'
-import Paragraph from '../models/Paragraph'
-export default class ParagraphSerializer extends Model {
+import Block from './Block'
+import Paragraph from '../blocks/Paragraph'
+export default class ParagraphSerializer extends Block {
   constructor () {
     super()
   }

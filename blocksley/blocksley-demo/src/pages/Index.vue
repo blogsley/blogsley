@@ -10,7 +10,7 @@
 <script>
 // import { BlocksleyState, serialize, render } from '@blocksley/blocksley'
 import { BlocksleyState } from '@blocksley/blocksley'
-import { Title, List, Image, Paragraph, Heading, Html, Page } from '@blocksley/blocksley/src/models'
+import { Title, List, Image, Paragraph, Heading, Html, Page } from '@blocksley/blocksley/src/blocks'
 
 import { UiMixin, PageMixin } from '@blocksley/demo-core/src/mixins'
 import BlockChooser from '@blocksley/demo-core/src/components/BlockChooser'
@@ -26,13 +26,13 @@ export default {
       title: 'New Page',
       post: {
         title: 'My Post',
-        model: '{}',
+        block: '{}',
         body: 'Blogsley rocks!!!'
       },
       state: new BlocksleyState({
         blockChooser: BlockChooser,
         imageChooser: ImageChooser,
-        model: new Page({
+        block: new Page({
           children: [
             new Title(),
             new Paragraph({ value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.' }),

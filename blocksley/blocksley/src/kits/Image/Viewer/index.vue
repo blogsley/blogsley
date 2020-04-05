@@ -1,6 +1,6 @@
 <template>
   <viewer-shell :vu="this">
-    <img :src="model.src" :width="this.model.width" :height="this.model.height" style="object-fit:cover"/>
+    <img :src="block.src" :width="this.block.width" :height="this.block.height" style="object-fit:cover"/>
   </viewer-shell>
 </template>
 
@@ -10,7 +10,7 @@ import { BlockViewerMixin } from '../../../mixins'
 export default {
   name: 'TitleBlockViewer',
   mixins: [ BlockViewerMixin ],
-  props: ['frame', 'model'],
+  props: ['frame', 'block'],
   components: {
     ViewerShell
   },

@@ -11,7 +11,7 @@ import BlockChooser from 'components/BlockChooser'
 import ImageChooser from 'components/ImageChooser'
 
 import { BlocksleyState, serialize, render } from '@blocksley/blocksley'
-import { Title, List, Image, Paragraph, Heading, Html, Page } from '@blocksley/blocksley/src/models'
+import { Title, List, Image, Paragraph, Heading, Html, Page } from '@blocksley/blocksley/src/blocks'
 
 import gql from 'graphql-tag'
 const directives = process.env.STANDALONE ? '@client' : ''
@@ -27,13 +27,13 @@ export default {
       title: 'New Page',
       post: {
         title: 'My Post',
-        model: '{}',
+        block: '{}',
         body: 'Blogsley rocks!!!'
       },
       state: new BlocksleyState({
         blockChooser: BlockChooser,
         imageChooser: ImageChooser,
-        model: new Page({
+        block: new Page({
           children: [
             new Title(),
             new Paragraph({ value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.' }),
@@ -49,7 +49,7 @@ export default {
     }
   },
   computed: {
-    model: function () { return this.state.model }
+    block: function () { return this.state.block }
   },
   mounted () {
   },
@@ -68,10 +68,10 @@ export default {
   methods: {
     save () {
       const post = Object.assign({}, this.post)
-      this.model.freeze()
-      post.model = serialize(this.model)
-      post.body = render(this.model)
-      post.title = this.state.findModelByType('title').value
+      this.block.freeze()
+      post.block = serialize(this.block)
+      post.body = render(this.block)
+      post.title = this.state.findBlockByType('title').value
 
       this.$apollo.mutate({
         // Query

@@ -18,11 +18,11 @@ const serializers = {
   'quote': new Quote()
 }
 
-export function serialize (model) {
+export function serialize (block) {
   console.log('serializing')
-  return JSON.stringify(model)
-  // const serializer = serializers[model.type]
-  // return serializer.serialize(model)
+  return JSON.stringify(block)
+  // const serializer = serializers[block.type]
+  // return serializer.serialize(block)
 }
 
 export function deserialize (data) {

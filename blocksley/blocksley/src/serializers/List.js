@@ -1,6 +1,6 @@
-import Model from './Model'
-import List from '../models/List'
-export default class ListSerializer extends Model {
+import Block from './Block'
+import List from '../blocks/List'
+export default class ListSerializer extends Block {
   constructor () {
     super()
   }

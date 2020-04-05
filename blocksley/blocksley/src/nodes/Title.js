@@ -1,6 +1,6 @@
 import { Node } from 'tiptap'
 import EFrame from '../components/EFrame'
-import TitleModel from '../models/Title'
+import TitleBlock from '../blocks/Title'
 
 export default class Title extends Node {
   get name () {
@@ -33,8 +33,8 @@ export default class Title extends Node {
         height: node.attrs.height,
         class: node.attrs.class
       }],
-      createModel (node) {
-        return new TitleModel(node.attrs.text, {
+      createBlock (node) {
+        return new TitleBlock(node.attrs.text, {
           class: node.attrs.class,
           width: node.attrs.width,
           height: node.attrs.height

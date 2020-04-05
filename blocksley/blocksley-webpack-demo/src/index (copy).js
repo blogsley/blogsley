@@ -56,7 +56,7 @@ import '@blocksley/blocksley/src/css/blocksley.styl'
 // import blocksley from '@blocksley/blocksley'
 import { Blocksley } from '@blocksley/blocksley'
 
-import { Title, List, Image, Paragraph, Html, Page } from '@blocksley/blocksley/src/models'
+import { Title, List, Image, Paragraph, Html, Page } from '@blocksley/blocksley/src/blocks'
 // import { PageMixin } from '@blocksley/blocksley/src/mixins'
 
 // Vue.use(Vuex)
@@ -116,7 +116,7 @@ Vue.use(Quasar, {
   }
 })
 
-const model = new Page([
+const block = new Page([
   new Title(),
   new Paragraph('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'),
   new Image('statics/journal-on-desk.jpg', { title: 'Journal on Desk' }),
@@ -129,7 +129,7 @@ new Vue({
   store,
   render: h => h(Blocksley, {
     props: {
-      model
+      block
     }
   })
 }).$mount('#app')

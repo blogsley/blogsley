@@ -1,6 +1,6 @@
 <template>
   <q-page padding class="content-page">
-    <pre><code>{{model.stringify()}}</code></pre>
+    <pre><code>{{block.stringify()}}</code></pre>
   </q-page>
 </template>
 
@@ -28,7 +28,7 @@ export default {
     }
   },
   computed: {
-    model: function () { return this.state.model }
+    block: function () { return this.state.block }
   },
   apollo: {
     post: {
@@ -37,7 +37,7 @@ export default {
           post(id: $id) @client {
             id
             title
-            model
+            block
             body
           }
         }`,
@@ -49,7 +49,7 @@ export default {
       update (data) {
         const post = data.post
         console.log(post)
-        this.state.model = deserialize(JSON.parse(post.model))
+        this.state.block = deserialize(JSON.parse(post.block))
         return post
       }
       // fetchPolicy: 'network-only'
@@ -60,9 +60,9 @@ export default {
     console.log(this.$blocksley)
     console.log(this.$page)
     if (!this.$page) {
-      this.$page = this.model
+      this.$page = this.block
     } else {
-      this.model = this.$page
+      this.block = this.$page
     }
     console.log(this.$page)
   },
@@ -79,10 +79,10 @@ export default {
     },
     save () {
       const post = Object.assign({}, this.post)
-      this.model.freeze()
-      post.model = serialize(this.model)
-      post.body = render(this.model)
-      post.title = this.state.findModelByType('title').value
+      this.block.freeze()
+      post.block = serialize(this.block)
+      post.body = render(this.block)
+      post.title = this.state.findBlockByType('title').value
       console.log(post)
       this.$apollo.mutate({
         // Query

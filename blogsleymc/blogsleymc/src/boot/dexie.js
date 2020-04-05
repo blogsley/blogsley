@@ -5,7 +5,7 @@ export const db = new Dexie('Blogsley')
 
 db.version(1).stores({
   users: '$$id, username, email, firstName, lastName',
-  posts: '$$id, title, model, body',
+  posts: '$$id, title, block, body',
   images: '$$id, title, filename, src',
   blocks: '$$id, title, name, icon'
 })

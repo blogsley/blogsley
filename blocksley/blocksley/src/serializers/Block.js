@@ -1,9 +1,9 @@
 import { deserialize } from './'
 
-export default class Model {
+export default class Block {
   constructor () {
   }
-  serialize (model) {
+  serialize (block) {
   }
   deserialize (data) {
     // console.log('deserializing children')

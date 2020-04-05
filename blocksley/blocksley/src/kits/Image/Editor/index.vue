@@ -5,12 +5,12 @@
     <vue-draggable-resizable
       :draggable="false"
       @resizing="onResizing"
-      :w="this.model.width"
-      :h="this.model.height"
+      :w="this.block.width"
+      :h="this.block.height"
       :z="750"
       class="resizer"
     />
-    <img ref="image" :src="model.src" :width="this.model.width" :height="this.model.height" style="object-fit:cover;"/>
+    <img ref="image" :src="block.src" :width="this.block.width" :height="this.block.height" style="object-fit:cover;"/>
   </editor-shell>
 </template>
 
@@ -24,7 +24,7 @@ import MainMenu from './MainMenu'
 export default {
   name: 'ImageBlockEditor',
   mixins: [ BlockEditorMixin ],
-  props: ['frame', 'model'],
+  props: ['frame', 'block'],
   components: {
     EditorShell,
     MainMenu
@@ -38,13 +38,13 @@ export default {
   beforeDestroy () {
     console.log('image editor destroyed')
     console.log(this)
-    this.model.html = render(this.model)
-    console.log(this.model)
+    this.block.html = render(this.block)
+    console.log(this.block)
   },
   methods: {
     onResizing (left, top, width, height) {
-      this.model.width = width
-      this.model.height = height
+      this.block.width = width
+      this.block.height = height
     }
   }
 }
