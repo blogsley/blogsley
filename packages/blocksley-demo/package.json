@@ -33,5 +33,6 @@
   },
   "browserslist": [
     "last 1 version, not dead, ie >= 11"
-  ]
+  ],
+  "gitHead": "b90346f6cabff3f222195c36d5f7440193eb2a32"
 }
