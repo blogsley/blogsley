@@ -1,6 +1,6 @@
 {
   "name": "@blocksley/demo-applet",
-  "version": "0.1.25-alpha.0",
+  "version": "0.1.26-alpha.0",
   "description": "Blocksley Applet Demo",
   "main": "index.js",
   "scripts": {
