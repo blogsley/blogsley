@@ -4,5 +4,6 @@
   "main": "index.js",
   "repository": "https://github.com/blocksley/blocksley",
   "author": "Kurtis Fields",
-  "license": "MIT"
+  "license": "MIT",
+  "gitHead": "31d7a103caf1b2ab710f09fc4270bc8c809c86ab"
 }
