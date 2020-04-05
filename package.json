@@ -1,5 +1,5 @@
 {
-  "name": "@blocksley/root",
+  "name": "@blogsleymc/root",
   "private": true,
   "scripts": {
     "deploy": "node ./scripts/deploy.js"
@@ -12,5 +12,8 @@
   },
   "workspaces": [
     "packages/*"
-  ]
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
 }
