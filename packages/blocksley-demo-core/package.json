@@ -1,6 +1,6 @@
 {
   "name": "@blocksley/demo-core",
-  "version": "0.1.24-alpha.0",
+  "version": "0.1.25-alpha.0",
   "main": "index.js",
   "repository": "https://github.com/blocksley/blocksley",
   "author": "Kurtis Fields",
