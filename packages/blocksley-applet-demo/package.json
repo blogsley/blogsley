@@ -2,6 +2,9 @@
   "name": "@blocksley/demo-applet",
   "version": "0.1.27-alpha.0",
   "description": "Blocksley Applet Demo",
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --progress --config build/webpack.config.dev.js",
@@ -59,5 +62,5 @@
     "webpack-dev-server": "^3.10.1",
     "webpack-merge": "^4.2.1"
   },
-  "gitHead": "2404ff1b293bde77136d1cec41a70f44e3b7338e"
+  "gitHead": "696cf80ee363f25ae9b00ea9efa2eea3d8bc402e"
 }
