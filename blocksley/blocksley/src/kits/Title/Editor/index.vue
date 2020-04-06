@@ -13,12 +13,12 @@
 </template>
 
 <script>
+import BlockEditor from '../../../components/BlockEditor'
 import EditorShell from '../../../components/EditorShell'
-import { BlockEditorMixin } from '../../../mixins'
 
 export default {
   name: 'TitleBlockEditor',
-  mixins: [ BlockEditorMixin ],
+  extends: BlockEditor,
   props: ['frame', 'block'],
   components: {
     EditorShell

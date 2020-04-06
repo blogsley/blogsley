@@ -6,12 +6,12 @@
 
 <script>
 
-import { BlockViewerMixin } from '../../../mixins'
+import BlockViewer from '../../../components/BlockViewer'
 import ViewerShell from '../../../components/ViewerShell'
 
 export default {
   name: 'PageViewer',
-  mixins: [ BlockViewerMixin ],
+  extends: BlockViewer,
   props: ['frame', 'block'],
   components: {
     ViewerShell

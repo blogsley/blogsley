@@ -7,10 +7,11 @@
 
 <script>
 import ViewerShell from '../../../components/ViewerShell'
-import { BlockViewerMixin } from '../../../mixins'
+import BlockViewer from '../../../components/BlockViewer'
+
 export default {
   name: 'TitleBlockViewer',
-  mixins: [ BlockViewerMixin ],
+  extends: BlockViewer,
   props: ['frame', 'block'],
   components: {
     ViewerShell

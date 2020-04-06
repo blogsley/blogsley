@@ -24,12 +24,12 @@ import MainMenu from './MainMenu'
 import FloatingMenu from './FloatingMenu'
 import AuxMenu from './AuxMenu'
 
-import { BlockEditorMixin, CodeEditorMixin } from '../../../mixins'
+import CodeEditor from '../../../components/CodeEditor'
 import CoderShell from '../../../components/CoderShell'
 
 export default {
+  extends: CodeEditor,
   name: 'HtmlBlockEditor',
-  mixins: [ BlockEditorMixin, CodeEditorMixin ],
   props: ['frame', 'block'],
   inject: ['state'],
   components: {

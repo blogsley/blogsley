@@ -20,12 +20,12 @@ import AuxMenu from './AuxMenu'
 import ImageChooser from '../../../components/ImageChooser'
 import { EditorContent } from 'tiptap'
 
-import { BlockEditorMixin, RichEditorMixin } from '../../../mixins'
+import RichEditor from '../../../components/RichEditor'
 import EditorShell from '../../../components/EditorShell'
 
 export default {
   name: 'HtmlBlockEditor',
-  mixins: [ BlockEditorMixin, RichEditorMixin ],
+  extends: RichEditor,
   props: ['frame', 'block'],
   inject: ['state'],
   components: {

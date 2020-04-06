@@ -1,13 +1,7 @@
+<script>
 import { mapGetters, mapActions } from 'vuex'
 
 export default {
-  data () {
-    return {
-    }
-  },
-  mounted () {
-    this.$emit('active', this)
-  },
   computed: {
     navDrawerOpen: {
       get: function () {
@@ -27,28 +21,21 @@ export default {
     },
     ...mapGetters([
       'view',
-      // 'vu',
       'page',
       'navbox',
       'toolbox',
       'toolboxProps',
       'header',
       'footer',
-      '$editor',
-      'edited',
-      '$image'
+      'edited'
     ])
   },
+  beforeDestroy () {
+    this.setToolbox(null)
+  },
   methods: {
-    floatLeft () {
-      this.block.class = ['block-left']
-    },
-    floatRight () {
-      this.block.class = ['block-right']
-    },
     ...mapActions([
       'setView',
-      //'setVu',
       'setPage',
       'toggleNavDrawer',
       'setNavDrawerOpen',
@@ -65,3 +52,4 @@ export default {
     ])
   }
 }
+</script>

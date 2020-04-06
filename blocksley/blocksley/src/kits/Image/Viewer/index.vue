@@ -5,11 +5,12 @@
 </template>
 
 <script>
+import BlockViewer from '../../../components/BlockViewer'
 import ViewerShell from '../../../components/ViewerShell'
-import { BlockViewerMixin } from '../../../mixins'
+
 export default {
   name: 'TitleBlockViewer',
-  mixins: [ BlockViewerMixin ],
+  extends: BlockViewer,
   props: ['frame', 'block'],
   components: {
     ViewerShell

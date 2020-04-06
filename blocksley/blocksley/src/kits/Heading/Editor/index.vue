@@ -13,11 +13,11 @@ import AuxMenu from './AuxMenu'
 import { EditorContent } from 'tiptap'
 
 import EditorShell from '../../../components/EditorShell'
-import { BlockEditorMixin, RichEditorMixin } from '../../../mixins'
+import RichEditor from '../../../components/RichEditor'
 
 export default {
   name: 'ParagraphEditor',
-  mixins: [ BlockEditorMixin, RichEditorMixin ],
+  extends: RichEditor,
   props: ['frame', 'block'],
   components: {
     EditorShell,

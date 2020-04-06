@@ -21,13 +21,13 @@
 <script>
 import { Add, List, Image, Paragraph, Heading, Html, Quote } from '../../../blocks'
 
-import { BlockEditorMixin } from '../../../mixins'
+import BlockEditor from '../../../components/BlockEditor'
 import Frame from '../../../components/Frame'
 import EditorShell from '../../../components/EditorShell'
 
 export default {
   name: 'PageEditor',
-  mixins: [ BlockEditorMixin ],
+  extends: BlockEditor,
   props: ['frame', 'block'],
   components: {
     Frame,

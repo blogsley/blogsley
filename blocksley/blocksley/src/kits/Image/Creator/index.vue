@@ -15,13 +15,13 @@
 </template>
 
 <script>
-import { BlockCreatorMixin } from '../../../mixins'
+import BlockCreator from '../../../components/BlockCreator'
 import EditorShell from '../../../components/EditorShell'
 import ImageChooser from '../../../components/ImageChooser'
 
 export default {
   name: 'ImageBlockCreator',
-  mixins: [ BlockCreatorMixin ],
+  extends: BlockCreator,
   props: ['frame', 'block'],
   inject: ['state'],
   components: {

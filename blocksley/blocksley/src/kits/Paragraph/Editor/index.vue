@@ -12,12 +12,12 @@ import MainMenu from './MainMenu'
 import AuxMenu from './AuxMenu'
 import { EditorContent } from 'tiptap'
 
+import RichEditor from '../../../components/RichEditor'
 import EditorShell from '../../../components/EditorShell'
-import { BlockEditorMixin, RichEditorMixin } from '../../../mixins'
 
 export default {
   name: 'ParagraphEditor',
-  mixins: [ BlockEditorMixin, RichEditorMixin ],
+  extends: RichEditor,
   props: ['frame', 'block'],
   components: {
     EditorShell,

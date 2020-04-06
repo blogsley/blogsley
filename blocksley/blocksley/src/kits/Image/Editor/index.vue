@@ -17,14 +17,14 @@
 <script>
 import { render } from '../../../renderers'
 
-import { BlockEditorMixin } from '../../../mixins'
+import BlockEditor from '../../../components/BlockEditor'
 import EditorShell from '../../../components/EditorShell'
 import MainMenu from './MainMenu'
 import Toolbox from './Toolbox'
 
 export default {
   name: 'ImageBlockEditor',
-  mixins: [ BlockEditorMixin ],
+  extends: BlockEditor,
   props: ['frame', 'block'],
   components: {
     EditorShell,
