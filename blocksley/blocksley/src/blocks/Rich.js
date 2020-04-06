@@ -1,8 +1,8 @@
-import Block from './Block'
+import { Block } from './Block'
 
-export default class Rich extends Block {
-  constructor (type, options) {
-    super(type, options)
+export class Rich extends Block {
+  constructor (options) {
+    super(options)
     this.content = null
     this.editor = null
   }

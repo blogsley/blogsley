@@ -23,12 +23,12 @@ export default {
     console.log(this.block)
     console.log(this.node)
     console.log(this.view)
-    if (this.block.state === 'create') {
+    if (this.block.status === 'create') {
       if (kits[this.block.type].Creator) {
         this.vu = kits[this.block.type].Creator
       } else {
         console.log(this.block.type)
-        this.block.state = 'normal'
+        this.block.status = 'normal'
         this.vu = kits[this.block.type].Editor
       }
     } else {

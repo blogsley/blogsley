@@ -1,7 +1,12 @@
-import Block from './Block'
+import { Block } from './Block'
 
-export default class Add extends Block {
+export class Add extends Block {
   constructor () {
-    super('add')
+    super()
   }
+}
+
+export default {
+  name: 'Add',
+  klass: Add
 }

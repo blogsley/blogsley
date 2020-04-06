@@ -1,5 +1,5 @@
 import Block from './Block'
-import Page from '../blocks/Page'
+import { Page } from '../blocks'
 export default class PageSerializer extends Block {
   constructor () {
     super()

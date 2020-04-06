@@ -13,32 +13,32 @@ db.version(1).stores({
 db.on('populate', function () {
   db.blocks.bulkPut([
     {
-      name: 'paragraph',
+      name: 'Paragraph',
       title: 'Paragraph',
       icon: 'mdi-format-paragraph'
     },
     {
-      name: 'heading',
+      name: 'Heading',
       title: 'Heading',
       icon: 'mdi-alpha-h'
     },
     {
-      name: 'list',
+      name: 'List',
       title: 'List',
       icon: 'mdi-format-list-bulleted'
     },
     {
-      name: 'image',
+      name: 'Image',
       title: 'Image',
       icon: 'mdi-image'
     },
     {
-      name: 'html',
+      name: 'Html',
       title: 'HTML',
       icon: 'mdi-language-html5'
     },
     {
-      name: 'quote',
+      name: 'Quote',
       title: 'Quote',
       icon: 'format_quote'
     }

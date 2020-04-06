@@ -1,5 +1,5 @@
 import Block from './Block'
-import Heading from '../blocks/Heading'
+import { Heading } from '../blocks'
 export default class HeadingSerializer extends Block {
   constructor () {
     super()

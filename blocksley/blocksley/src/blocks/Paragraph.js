@@ -1,4 +1,4 @@
-import Rich from './Rich'
+import { Rich } from './Rich'
 import { Editor } from 'tiptap'
 import {
   Blockquote,
@@ -22,9 +22,9 @@ import {
   Placeholder
 } from 'tiptap-extensions'
 
-export default class Paragraph extends Rich {
+export class Paragraph extends Rich {
   constructor (options={}) {
-    super('paragraph', options)
+    super(options)
     if (options.value) {
       this.html = '<p>' + this.value + '</p>'
     }
@@ -60,4 +60,9 @@ export default class Paragraph extends Rich {
     })
     this.content = this.editor.getJSON()
   }
+}
+
+export default {
+  name: 'Paragraph',
+  klass: Paragraph
 }

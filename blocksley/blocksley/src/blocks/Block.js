@@ -8,11 +8,10 @@ function arrayMove (arr, oldIndex, newIndex) {
   return arr
 }
 
-class Block {
-  constructor (type, options) {
-    this.type = type
+export class Block {
+  constructor (options) {
     this.id = nanoid()
-    this.state = 'normal'
+    this.status = 'normal'
     this._value = null
     this.html = ''
     this.children = []
@@ -20,6 +19,13 @@ class Block {
     this.height = 256
     this.class = [] //TODO:smelly:has to do with style
     Object.assign(this, options)
+  }
+  get type () {
+    console.log(this.constructor.name)
+    return this.constructor.name
+  }
+  set type (val) {
+    //Need this dummy method for deserialization
   }
   set value (val) {
     this._value = val
@@ -75,4 +81,3 @@ class Block {
     } 
   }
 }
-export default Block

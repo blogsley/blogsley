@@ -8,14 +8,14 @@ import Image from './Image'
 import Quote from './Quote'
 
 const renderers = {
-  'page': new Page(),
-  'html': new Html(),
-  'title': new Title(),
-  'paragraph': new Paragraph(),
-  'heading': new Heading(),
-  'list': new List(),
-  'image': new Image(),
-  'quote': new Quote()
+  'Page': new Page(),
+  'Html': new Html(),
+  'Title': new Title(),
+  'Paragraph': new Paragraph(),
+  'Heading': new Heading(),
+  'List': new List(),
+  'Image': new Image(),
+  'Quote': new Quote()
 }
 
 export function render (block) {

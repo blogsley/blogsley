@@ -29,6 +29,7 @@ export default {
   name: 'PageEditor',
   extends: BlockEditor,
   props: ['frame', 'block'],
+  inject: ['state'],
   components: {
     Frame,
     EditorShell
@@ -65,27 +66,8 @@ export default {
           this.block.moveChild(action.block, action.to)
           break
         case 'new':
-          switch (action.kind) {
-            case 'paragraph':
-              block = new Paragraph()
-              break
-            case 'heading':
-              block = new Heading()
-              break
-            case 'list':
-              block = new List()
-              break
-            case 'image':
-              block = new Image()
-              break
-            case 'html':
-              block = new Html()
-              break
-            case 'quote':
-              block = new Quote()
-              break
-          }
-          block.state = 'create'
+          block = this.state.createBlock(action.kind)
+          block.status = 'create'
           // this.block.replaceChild(action.block, block)
           this.block.insertAfter(action.block, block)
           break

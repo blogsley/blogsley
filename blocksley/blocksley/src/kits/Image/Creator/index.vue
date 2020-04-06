@@ -44,13 +44,13 @@ export default {
     },
     insertImage (image) {
       console.log('insertImage: ', image)
-      this.block.state = 'normal'
+      this.block.status = 'normal'
       this.block.src = image.src
       this.showImgChooser = false
       this.frame.edit()
     },
     validate() {
-      if (this.block.state != 'normal') {
+      if (this.block.status != 'normal') {
         this.frame.remove()
       }
     }

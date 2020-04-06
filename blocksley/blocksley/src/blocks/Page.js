@@ -1,7 +1,12 @@
-import Block from './Block'
+import { Block } from './Block'
 
-export default class Page extends Block {
+export class Page extends Block {
   constructor (options) {
-    super('page', options)
+    super(options)
   }
+}
+
+export default {
+  name: 'Page',
+  klass: Page
 }

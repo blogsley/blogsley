@@ -1,5 +1,5 @@
 import Block from './Block'
-import Quote from '../blocks/Quote'
+import { Quote } from '../blocks'
 export default class QuoteSerializer extends Block {
   constructor () {
     super()

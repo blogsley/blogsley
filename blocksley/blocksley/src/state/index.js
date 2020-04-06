@@ -2,9 +2,23 @@ import { Page } from '../blocks'
 import ImageChooser from '../components/ImageChooser'
 export class BlocksleyState {
   constructor (options) {
+    this.blockTypes = {}
+    this.kits = {}
     this.block = new Page()
     this.imageChooser = ImageChooser
     Object.assign(this, options)
+  }
+  addBlockType (blockType) {
+    this.blockTypes[blockType.name] = blockType
+  }
+  addKit (kit) {
+    this.kits[kit.name] = kit
+  }
+  findKitByName (name) {
+    return this.kits[name]
+  }
+  createBlock (name) {
+    return new (this.blockTypes[name].klass)()
   }
   findBlockByType (type, _block) {
     var result = null

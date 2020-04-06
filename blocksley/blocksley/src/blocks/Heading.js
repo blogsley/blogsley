@@ -1,7 +1,6 @@
-import Rich from './Rich'
+import { Rich } from './Rich'
 import { Editor } from 'tiptap'
 import {
-  Heading,
   Bold,
   Code,
   Italic,
@@ -11,9 +10,11 @@ import {
   History
 } from 'tiptap-extensions'
 
-export default class HeadingBlock extends Rich {
+import { Heading as HeadingExt} from 'tiptap-extensions'
+
+export class Heading extends Rich {
   constructor (options={}) {
-    super('heading', options)
+    super(options)
     if (this.value) {
       this.html = '<h2>' + this.value + '</h2>'
     } else {
@@ -22,7 +23,7 @@ export default class HeadingBlock extends Rich {
     this.editor = new Editor({
       content: this.html,
       extensions: [
-        new Heading({ levels: [1, 2, 3, 4] }),
+        new HeadingExt({ levels: [1, 2, 3, 4] }),
         new Bold(),
         new Code(),
         new Italic(),
@@ -34,4 +35,9 @@ export default class HeadingBlock extends Rich {
     })
     this.content = this.editor.getJSON()
   }
+}
+
+export default {
+  name: 'Heading',
+  klass: Heading
 }

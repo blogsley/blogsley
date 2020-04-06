@@ -1,14 +1,14 @@
-import Block from './Block'
+import { Block } from './Block'
 
-export default class Image extends Block {
+export class Image extends Block {
   constructor (options) {
-    super('image', options)
+    super(options)
     // this.src = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=='
     /* this.width = 256
     this.height = 256 */
 
     if (!this.src) {
-      this.state = 'create'
+      this.status = 'create'
     }
   }
   toJSON () {
@@ -18,4 +18,9 @@ export default class Image extends Block {
       height: this.height
     })
   }
+}
+
+export default {
+  name: 'Image',
+  klass: Image
 }

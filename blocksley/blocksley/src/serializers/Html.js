@@ -1,5 +1,5 @@
 import Block from './Block'
-import Html from '../blocks/Html'
+import { Html } from '../blocks'
 export default class HtmlSerializer extends Block {
   constructor () {
     super()

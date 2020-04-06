@@ -37,7 +37,7 @@ export default {
   },
   mounted () {
     console.log(this.block)
-    if (this.block.state === 'create') {
+    if (this.block.status === 'create') {
       if (kits[this.block.type].Creator) {
         this.use('Creator')
       } else {

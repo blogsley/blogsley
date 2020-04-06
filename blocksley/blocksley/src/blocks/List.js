@@ -1,4 +1,4 @@
-import Rich from './Rich'
+import { Rich } from './Rich'
 import { Editor } from 'tiptap'
 import {
   Blockquote,
@@ -21,9 +21,9 @@ import {
   History
 } from 'tiptap-extensions'
 
-export default class List extends Rich {
+export class List extends Rich {
   constructor (options={}) {
-    super('list', options)
+    super(options)
     if (options.value) {
       this.html = '<ul>'
       options.value.forEach((item) => {
@@ -56,4 +56,9 @@ export default class List extends Rich {
     })
     this.content = this.editor.getJSON()
   }
+}
+
+export default {
+  name: 'List',
+  klass: List
 }

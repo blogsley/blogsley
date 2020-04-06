@@ -1,5 +1,5 @@
 import Block from './Block'
-import Paragraph from '../blocks/Paragraph'
+import { Paragraph } from '../blocks'
 export default class ParagraphSerializer extends Block {
   constructor () {
     super()

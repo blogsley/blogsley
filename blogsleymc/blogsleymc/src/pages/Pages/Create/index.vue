@@ -10,8 +10,7 @@ import Navbox from './Navbox'
 import BlockChooser from 'components/BlockChooser'
 import ImageChooser from 'components/ImageChooser'
 
-import { BlocksleyState, serialize, render } from '@blocksley/blocksley'
-import { Title, List, Image, Paragraph, Heading, Html, Page } from '@blocksley/blocksley/src/blocks'
+import { createDemoState, serialize, render } from '@blocksley/blocksley'
 
 import gql from 'graphql-tag'
 const directives = process.env.STANDALONE ? '@client' : ''
@@ -30,21 +29,9 @@ export default {
         block: '{}',
         body: 'Blogsley rocks!!!'
       },
-      state: new BlocksleyState({
+      state: createDemoState({
         blockChooser: BlockChooser,
-        imageChooser: ImageChooser,
-        block: new Page({
-          children: [
-            new Title(),
-            new Paragraph({ value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.' }),
-            // new Image({ src: `${process.env.SERVER_URL}/images/journal-on-desk.jpg`, title: 'Journal on Desk' }),
-            new Image({ src: 'statics/images/journal-on-desk.jpg', title: 'Journal on Desk' }),
-            new Heading({ value: 'Heading' }),
-            new Paragraph({ value: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.' }),
-            new Html({ html: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>' }),
-            new List({ value: ['Get Milk', 'Get Bread', 'Get Butter'] })
-          ]
-        })
+        imageChooser: ImageChooser
       })
     }
   },
@@ -52,6 +39,10 @@ export default {
     block: function () { return this.state.block }
   },
   mounted () {
+    this.state = createDemoState({
+      blockChooser: BlockChooser,
+      imageChooser: ImageChooser
+    })
   },
   beforeDestroy () {
   },
@@ -71,7 +62,7 @@ export default {
       this.block.freeze()
       post.block = serialize(this.block)
       post.body = render(this.block)
-      post.title = this.state.findBlockByType('title').value
+      post.title = this.state.findBlockByType('Title').value
 
       this.$apollo.mutate({
         // Query
@@ -90,7 +81,6 @@ export default {
         this.id = response.data.createPost.id
         // this.$q.notify('Page Created')
         this.$router.replace(`/pages/${this.id}`)
-        // this.$router.go(-1)
       })
     },
     onSwitch () {

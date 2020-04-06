@@ -1,5 +1,5 @@
 import Block from './Block'
-import Title from '../blocks/Title'
+import { Title } from '../blocks'
 export default class TitleSerializer extends Block {
   constructor () {
     super()

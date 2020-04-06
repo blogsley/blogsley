@@ -9,13 +9,13 @@ import Image from './Image'
 import Quote from './Quote'
 
 export default {
-  'add': Add,
-  'page': Page,
-  'html': Html,
-  'title': Title,
-  'paragraph': Paragraph,
-  'heading': Heading,
-  'list': List,
-  'image': Image,
-  'quote': Quote
+  Add,
+  Page,
+  Html,
+  Title,
+  Paragraph,
+  Heading,
+  List,
+  Image,
+  Quote
 }

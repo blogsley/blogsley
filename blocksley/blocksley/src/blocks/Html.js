@@ -1,4 +1,4 @@
-import Rich from './Rich'
+import { Rich } from './Rich'
 import { Editor } from 'tiptap'
 import {
   Blockquote,
@@ -23,9 +23,9 @@ import {
 
 import { Heading, Title, Image } from '../nodes'
 
-export default class Html extends Rich {
+export class Html extends Rich {
   constructor (options) {
-    super('html', options)
+    super(options)
     this.editor = new Editor({
       content: this.html,
       extensions: [
@@ -52,4 +52,9 @@ export default class Html extends Rich {
     })
     this.content = this.editor.getJSON()
   }
+}
+
+export default {
+  name: 'Html',
+  klass: Html
 }
