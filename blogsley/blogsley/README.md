@@ -20,10 +20,11 @@ Install required packages:
 
 ## Development
 
-Navigate to the main package
+Launch Blogsley in serverless/demo development mode:
 
-        cd blogsley/blogsley
-        
+        STANDALONE=true quasar dev
+
 Launch Blogsley in development mode:
 
         quasar dev
+        

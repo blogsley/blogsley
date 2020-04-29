@@ -5,7 +5,7 @@ A GraphQL powered CMS frontend for the JAMstack!!!
 
 ## Quick Links
 
-:cyclone: [Live Demo](https://blogsley.netlify.com/)
+:cyclone: [Live Demo](https://blogsley.netlify.app/)
 
 ## Installation
 
@@ -29,7 +29,11 @@ Install required packages:
 Navigate to the main package
 
         cd blogsley/blogsley
-        
+
+Launch Blogsley in serverless/demo development mode:
+
+        STANDALONE=true quasar dev
+
 Launch Blogsley in development mode:
 
         quasar dev
