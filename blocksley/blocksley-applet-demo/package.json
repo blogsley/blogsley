@@ -1,6 +1,6 @@
 {
   "name": "@blocksley/demo-applet",
-  "version": "0.1.28-alpha.0",
+  "version": "0.1.29-alpha.0",
   "description": "Blocksley Applet Demo",
   "publishConfig": {
     "access": "public"

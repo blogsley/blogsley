@@ -1,6 +1,6 @@
 {
   "name": "@blocksley/applet",
-  "version": "0.1.28-alpha.0",
+  "version": "0.1.29-alpha.0",
   "description": "Blocksley Applet",
   "productName": "Blocksley Applet",
   "cordovaId": "org.cordova.quasar.app",
@@ -21,7 +21,7 @@
     "test": "echo \"No test specified\" && exit 0"
   },
   "dependencies": {
-    "@blocksley/quasar-app-extension-blocksley": "^0.1.28-alpha.0",
+    "@blocksley/quasar-app-extension-blocksley": "^0.1.29-alpha.0",
     "@quasar/extras": "^1.5.0",
     "@vue/web-component-wrapper": "^1.2.0",
     "axios": "^0.19.1",
