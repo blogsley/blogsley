@@ -1,14 +1,8 @@
 # Blogsley :moon:
-[![Netlify Status](https://api.netlify.com/api/v1/badges/195d38fd-635c-4b46-864e-f24a9e768896/deploy-status)](https://app.netlify.com/sites/blogsley/deploys)
 
-A GraphQL powered CMS frontend for the JAMstack!!!
-
-## Quick Links
-
-:cyclone: [Live Demo](https://blogsley.netlify.com/)
+A GraphQL powered CMS client for the JAMstack!!!
 
 ## Installation
-
 
 Clone the repository:
 
@@ -33,4 +27,3 @@ Navigate to the main package
 Launch Blogsley in development mode:
 
         quasar dev
-        

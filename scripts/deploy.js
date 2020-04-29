@@ -8,7 +8,7 @@ switch (SITE_ID) {
   case '@blocksley/blocksley-demo':
     execSync('yarn workspace @blocksley/blocksley-demo deploy', { stdio: 'inherit'})
     break;
-  case '@blogsleymc/blogsleymc':
-    execSync('yarn workspace @blogsleymc/blogsleymc deploy', { stdio: 'inherit'})
+  case '@blogsley/blogsley':
+    execSync('yarn workspace @blogsley/blogsley deploy', { stdio: 'inherit'})
     break;  
 }

@@ -1,5 +1,5 @@
 {
-  "name": "blogsleymc",
+  "name": "blogsley",
   "private": true,
   "scripts": {
     "deploy": "node ./scripts/deploy.js"
@@ -11,7 +11,7 @@
   "resolutions": {
   },
   "workspaces": [
-    "blogsleymc/*",
+    "blogsley/*",
     "blocksley/*"
   ]
 }
