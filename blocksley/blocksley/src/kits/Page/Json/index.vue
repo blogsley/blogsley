@@ -1,6 +1,5 @@
 <template>
   <viewer-shell :vu="this">
-    <!-- <div v-html="block.html" class="viewer__content"/> -->
     <pre><code>{{block.stringify()}}</code></pre>
   </viewer-shell>
 </template>

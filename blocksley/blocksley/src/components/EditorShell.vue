@@ -384,7 +384,7 @@ shell-background()
   shell-background()
 
 .editor-shell
-  position: relative;
+  // position: relative;
   // width: 100%;
   max-width: 1080px;
   

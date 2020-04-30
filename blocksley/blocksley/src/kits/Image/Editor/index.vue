@@ -7,7 +7,8 @@
       @resizing="onResizing"
       :w="this.block.width"
       :h="this.block.height"
-      :z="750"
+      :z="1000"
+      :handles="['bm', 'mr', 'br']"
       class="resizer"
     />
     <img ref="image" :src="block.src" :width="this.block.width" :height="this.block.height" style="object-fit:cover;"/>
@@ -58,6 +59,6 @@ export default {
 .resizer {
   position: absolute;
   left: 0;
-  top: 32px;
+  top: 0;
 }
 </style>

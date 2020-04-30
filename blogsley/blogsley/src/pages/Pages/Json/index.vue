@@ -6,8 +6,9 @@
 
 <script>
 import gql from 'graphql-tag'
+const directives = process.env.STANDALONE ? '@client' : ''
 
-import { BlocksleyState, serialize, deserialize, render } from '@blocksley/blocksley'
+import { BlocksleyState, deserialize } from '@blocksley/blocksley'
 
 import { UiMixin, PageMixin } from 'src/mixins'
 import Navbox from './Navbox'
@@ -34,7 +35,7 @@ export default {
     post: {
       query: gql`
         query postQuery($id: ID!) {
-          post(id: $id) @client {
+          post(id: $id) ${directives} {
             id
             title
             block
@@ -55,68 +56,11 @@ export default {
       // fetchPolicy: 'network-only'
     }
   },
-  created () {
-    console.log('demo created')
-    console.log(this.$blocksley)
-    console.log(this.$page)
-    if (!this.$page) {
-      this.$page = this.block
-    } else {
-      this.block = this.$page
-    }
-    console.log(this.$page)
-  },
   mounted () {
   },
   beforeDestroy () {
   },
   methods: {
-    edit () {
-      this.$router.push(`/pages/${this.post.id}`)
-    },
-    json () {
-      this.$router.push(`/pages/${this.post.id}/json`)
-    },
-    save () {
-      const post = Object.assign({}, this.post)
-      this.block.freeze()
-      post.block = serialize(this.block)
-      post.body = render(this.block)
-      post.title = this.state.findBlockByType('title').value
-      console.log(post)
-      this.$apollo.mutate({
-        // Query
-        mutation: gql`
-          mutation ($data: PostInput!) {
-            updatePost(data: $data) @client {
-              ok
-            }
-          }`,
-        // Parameters
-        variables: {
-          data: post
-        }
-      })
-      this.$q.notify('Page Saved')
-    },
-    destroy () {
-      this.$apollo.mutate({
-        // Query
-        mutation: gql`
-          mutation ($id: ID!) {
-            deletePost(id: $id) @client {
-              ok
-            }
-          }`,
-        // Parameters
-        variables: {
-          id: this.id
-        }
-      }).then((data) => {
-        this.$q.notify('Page Deleted')
-        this.$router.go(-1)
-      })
-    },
     onSwitch () {
       this.setView(this)
       this.setNavbox(Navbox)
