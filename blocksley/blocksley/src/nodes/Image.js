@@ -1,6 +1,6 @@
 import { Node } from 'tiptap'
 import EFrame from '../components/EFrame'
-import Image from '../blocks/Image'
+import { Image } from '../blocks/Image'
 
 export default class ImageNode extends Node {
   constructor(options = {}) {

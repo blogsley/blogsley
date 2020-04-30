@@ -6,8 +6,4 @@ export class Title extends Block {
     this.html = this.value ? `<h1>${this.value}</h1>` : 'My Title'
   }
 }
-
-export default {
-  name: 'Title',
-  klass: Title
-}
+Title.type = 'Title'

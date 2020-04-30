@@ -1,6 +1,6 @@
 import { Node } from 'tiptap'
 import EFrame from '../components/EFrame'
-import TitleBlock from '../blocks/Title'
+import { Title as TitleBlock } from '../blocks/Title'
 
 export default class Title extends Node {
   get name () {

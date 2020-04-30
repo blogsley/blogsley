@@ -1,15 +1,24 @@
+import blockTypes from '../blocks'
 import { Page } from '../blocks'
 import ImageChooser from '../components/ImageChooser'
+
 export class BlocksleyState {
   constructor (options) {
-    this.blockTypes = {}
+    this.blockTypes = blockTypes
+    // this.blockTypeMap = {}
     this.kits = {}
     this.block = new Page()
     this.imageChooser = ImageChooser
     Object.assign(this, options)
+    console.log('blockTypes', this.blockTypes)
+    /*
+    for(const type of this.blockTypes) {
+      this.blockTypeMap[type.type] = type
+    }*/
   }
   addBlockType (blockType) {
-    this.blockTypes[blockType.name] = blockType
+    console.log('addBlockType', blockType)
+    this.blockTypeMap[blockType.type] = blockType
   }
   addKit (kit) {
     this.kits[kit.name] = kit
@@ -18,7 +27,9 @@ export class BlocksleyState {
     return this.kits[name]
   }
   createBlock (name) {
-    return new (this.blockTypes[name].klass)()
+    console.log('createBlock', name)
+    //return new (this.blockTypeMap[name])()
+    return new (this.blockTypes[name])()
   }
   findBlockByType (type, _block) {
     var result = null

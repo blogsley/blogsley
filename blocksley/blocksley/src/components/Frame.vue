@@ -51,6 +51,7 @@ export default {
   },
   methods: {
     use (toolName) {
+      console.log('use', this.block.type)
       this.vu = kits[this.block.type][toolName]
     },
     onAction (action) {

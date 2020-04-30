@@ -5,8 +5,4 @@ export class Add extends Block {
     super()
   }
 }
-
-export default {
-  name: 'Add',
-  klass: Add
-}
+Add.type = 'Add'

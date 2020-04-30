@@ -53,8 +53,4 @@ export class Html extends Rich {
     this.content = this.editor.getJSON()
   }
 }
-
-export default {
-  name: 'Html',
-  klass: Html
-}
+Html.type = 'Html'

@@ -21,8 +21,7 @@ export class Block {
     Object.assign(this, options)
   }
   get type () {
-    console.log(this.constructor.name)
-    return this.constructor.name
+    return this.constructor.type
   }
   set type (val) {
     //Need this dummy method for deserialization
@@ -81,3 +80,4 @@ export class Block {
     } 
   }
 }
+Block.type = 'Block'

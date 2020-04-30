@@ -39,8 +39,4 @@ export class Quote extends Rich {
     this.content = this.editor.getJSON()
   }
 }
-
-export default {
-  name: 'Quote',
-  klass: Quote
-}
+Quote.type = 'Quote'

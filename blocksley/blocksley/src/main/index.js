@@ -1,5 +1,6 @@
 import { BlocksleyState } from '../state'
 import blockTypes from '../blocks'
+console.log('blockTypes', blockTypes)
 import kits from '../kits'
 import { Title, List, Image, Paragraph, Heading, Html, Page } from '../blocks'
 

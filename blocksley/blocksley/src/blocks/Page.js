@@ -5,8 +5,4 @@ export class Page extends Block {
     super(options)
   }
 }
-
-export default {
-  name: 'Page',
-  klass: Page
-}
+Page.type = 'Page'

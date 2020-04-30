@@ -36,8 +36,4 @@ export class Heading extends Rich {
     this.content = this.editor.getJSON()
   }
 }
-
-export default {
-  name: 'Heading',
-  klass: Heading
-}
+Heading.type = 'Heading'

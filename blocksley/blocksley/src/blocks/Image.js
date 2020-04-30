@@ -19,8 +19,4 @@ export class Image extends Block {
     })
   }
 }
-
-export default {
-  name: 'Image',
-  klass: Image
-}
+Image.type = 'Image'

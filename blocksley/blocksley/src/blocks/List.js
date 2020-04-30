@@ -57,8 +57,4 @@ export class List extends Rich {
     this.content = this.editor.getJSON()
   }
 }
-
-export default {
-  name: 'List',
-  klass: List
-}
+List.type = 'List'

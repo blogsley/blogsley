@@ -3,8 +3,8 @@ import Frame from '../Frame'
 import { Image, Html } from '../blocks'
 
 const blockTypes = {
-  'image': Image,
-  'html': Html
+  'Image': Image,
+  'Html': Html
 }
 
 export default class BlockNode extends Node {

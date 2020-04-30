@@ -18,3 +18,4 @@ export class Rich extends Block {
     this.html = this.editor.getHTML()
   }
 }
+Rich.type = 'Rich'

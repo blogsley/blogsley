@@ -61,8 +61,4 @@ export class Paragraph extends Rich {
     this.content = this.editor.getJSON()
   }
 }
-
-export default {
-  name: 'Paragraph',
-  klass: Paragraph
-}
+Paragraph.type = 'Paragraph'
