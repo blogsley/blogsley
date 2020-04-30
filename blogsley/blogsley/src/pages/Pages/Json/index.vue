@@ -1,6 +1,8 @@
 <template>
   <q-page padding class="content-page">
-    <pre><code>{{block.stringify()}}</code></pre>
+    <div style="overflow: auto">
+      <pre><code>{{block.stringify()}}</code></pre>
+    </div>
   </q-page>
 </template>
 

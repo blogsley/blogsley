@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="lHr Lpr lFr">
+  <q-layout view="lHr LpR lFr">
 
     <q-header :v-if="header" elevated reveal>
       <div v-bind:is="header" />
