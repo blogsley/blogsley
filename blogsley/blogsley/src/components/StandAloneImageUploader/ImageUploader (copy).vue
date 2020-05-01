@@ -115,7 +115,6 @@ export default {
         })(file)
         reader.readAsDataURL(file)
       }
-      // this.save()
     }
   },
   mounted () {

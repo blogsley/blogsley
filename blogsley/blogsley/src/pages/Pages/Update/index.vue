@@ -95,7 +95,7 @@ export default {
       this.block.freeze()
       const block = serialize(this.block)
       const body = render(this.block)
-      const title = this.state.findBlockByType('title').value
+      const title = this.state.findBlockByType('Title').value
       const postInput = {
         title,
         block,
@@ -122,7 +122,7 @@ export default {
       this.block.freeze()
       const block = serialize(this.block)
       const body = render(this.block)
-      const title = this.state.findBlockByType('title').value
+      const title = this.state.findBlockByType('Title').value
       const postInput = {
         title,
         block,

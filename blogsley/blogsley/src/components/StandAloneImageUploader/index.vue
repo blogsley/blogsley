@@ -113,7 +113,6 @@ export default {
           console.log(data)
         })
       }
-      // this.save()
     }
   },
   mounted () {

@@ -77,9 +77,10 @@ const createStandaloneClient = function () {
 }
 
 const createServerClient = function () {
-  const serverUrl = process.env.SERVER_URL ? process.env.SERVER_URL : window.location.origin
+  const graphqlUrl = process.env.GRAPHQL_URL ? process.env.GRAPHQL_URL : window.location.origin
+  const subscriptionsUrl = process.env.SUBSCRIPTIONS_URL ? process.env.SUBSCRIPTIONS_URL : window.location.origin
   const httpLink = createHttpLink({
-    uri: `${serverUrl}/graphql/`
+    uri: graphqlUrl
   })
 
   const authLink = setContext((_, { headers }) => {
@@ -99,8 +100,7 @@ const createServerClient = function () {
   const wsLink = new WebSocketLink({
     // uri: 'ws://localhost:3000/subscriptions',
     // uri: 'ws://localhost:5000/subscriptions',
-    uri: 'ws://localhost:5000/graphql/',
-    // `${serverUrl}/graphql/`
+    uri: subscriptionsUrl,
     options: {
       reconnect: true
     }
