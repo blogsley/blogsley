@@ -1,6 +1,6 @@
 {
   "name": "@blogsley/blogsley",
-  "version": "0.1.29-alpha.0",
+  "version": "0.1.30-alpha.0",
   "description": "Web Publishing Evolved.  A GraphQL CMS for the JAMstack!",
   "productName": "Blogsley",
   "cordovaId": "org.cordova.quasar.app",
@@ -23,7 +23,7 @@
     "test": "echo \"No test specified\" && exit 0"
   },
   "dependencies": {
-    "@blocksley/quasar-app-extension-blocksley": "^0.1.29-alpha.0",
+    "@blocksley/quasar-app-extension-blocksley": "^0.1.30-alpha.0",
     "@quasar/extras": "^1.7.0",
     "apollo-boost": "^0.4.7",
     "apollo-cache-inmemory": "^1.6.5",
