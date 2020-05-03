@@ -1,3 +1,6 @@
 [build]
   command = "yarn deploy"
   publish = "dist"
+
+[build.environment]
+  YARN = "1.21.1"
