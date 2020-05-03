@@ -4,11 +4,11 @@
  * quasar.conf > pwa > workboxPluginMode is set to "InjectManifest"
  */
 
- /*
- * Ignore this file for now.  GenerateSW is way easier!
+/*
+ * Don't use this file!!!  GenerateSW is way easier!
  */
 
-self.addEventListener('install', function(event) {
+self.addEventListener('install', function (event) {
   // The promise that skipWaiting() returns can be safely ignored.
   self.skipWaiting()
 
@@ -18,7 +18,7 @@ self.addEventListener('install', function(event) {
 })
 
 self.addEventListener('activate', event => {
-  event.waitUntil(clients.claim())
+  event.waitUntil(self.clients.claim())
 })
 
 self.addEventListener('fetch', (event) => {

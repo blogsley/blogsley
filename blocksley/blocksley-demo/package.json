@@ -5,37 +5,50 @@
   "productName": "Blocksley Demo",
   "cordovaId": "org.cordova.quasar.app",
   "author": "Kurtis Fields <kurtisfields@gmail.com>",
+  "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
+  "files": [
+    "dist",
+    "src"
+  ],
   "scripts": {
     "build": "quasar build",
     "deploy": "quasar build",
+    "postdeploy": "yarn run copy:dist && yarn run copy:netlify",
+    "copy:dist": "yarn run copyfiles dist/* dist/**/* dist/**/**/* ../../",
+    "copy:netlify": "yarn run copyfiles _redirects ../../dist",
     "lint": "eslint --ext .js,.vue src",
     "test": "echo \"No test specified\" && exit 0"
   },
   "dependencies": {
     "@blocksley/quasar-app-extension-blocksley": "^0.1.29-alpha.0",
-    "@quasar/extras": "^1.5.0",
-    "axios": "^0.19.1",
-    "quasar": "^1.7.4"
+    "@quasar/extras": "^1.7.0",
+    "axios": "^0.19.1"
   },
   "devDependencies": {
-    "@quasar/app": "^1.5.2",
-    "@vue/eslint-config-standard": "^5.1.0",
+    "@quasar/app": "^1.8.3",
     "babel-eslint": "^10.0.1",
-    "circular-dependency-plugin": "^5.0.2",
+    "copyfiles": "^2.2.0",
     "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.0",
     "eslint-loader": "^3.0.3",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^6.1.2"
   },
   "engines": {
-    "node": ">= 8.9.0",
-    "npm": ">= 5.6.0",
-    "yarn": ">= 1.6.0"
+    "node": ">= 10.18.1",
+    "npm": ">= 6.13.4",
+    "yarn": ">= 1.21.1"
   },
   "browserslist": [
     "last 1 version, not dead, ie >= 11"
   ],
-  "gitHead": "696cf80ee363f25ae9b00ea9efa2eea3d8bc402e"
+  "resolutions": {
+    "@babel/parser": "7.7.5"
+  }
 }

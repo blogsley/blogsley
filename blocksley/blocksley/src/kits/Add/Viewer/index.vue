@@ -68,17 +68,6 @@ export default {
         this.frame.remove()
       }
     }
-
-    /*
-    newParagraph () {
-      this.$emit('action', { type: 'new', kind: 'paragraph', block: this.block })
-    },
-    newList () {
-      this.$emit('action', { type: 'new', kind: 'list', block: this.block })
-    },
-    newImage () {
-      this.$emit('action', { type: 'new', kind: 'image', block: this.block })
-    }*/
   }
 }
 </script>

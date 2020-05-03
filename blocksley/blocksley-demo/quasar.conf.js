@@ -1,6 +1,4 @@
 // Configuration for your app
-const CircularDependencyPlugin = require('circular-dependency-plugin')
-
 module.exports = function (ctx) {
   return {
     // app boot file (/src/boot)
@@ -57,7 +55,7 @@ module.exports = function (ctx) {
     supportIE: false,
 
     build: {
-      distDir: '../../dist',
+      distDir: 'dist',
       scopeHoisting: true,
       vueRouterMode: 'history',
       // vueCompiler: true,
@@ -74,20 +72,6 @@ module.exports = function (ctx) {
           loader: 'eslint-loader',
           exclude: /node_modules/
         })
-        /*
-        cfg.plugins.push(...[
-          new CircularDependencyPlugin({
-            // exclude detection of files based on a RegExp
-            exclude: /a\.js|node_modules/,
-            // add errors to webpack instead of warnings
-            failOnError: true,
-            // allow import cycles that include an asyncronous import,
-            // e.g. via import( webpackMode: "weak" './file.js')
-            allowAsyncCycles: false,
-            // set the current working directory for displaying module paths
-            cwd: process.cwd(),
-          })
-        ]) */
       }
     },
 
@@ -98,7 +82,6 @@ module.exports = function (ctx) {
       watchOptions: {
         ignored: [
           'node_modules',
-          
           // be sure to change <myextid> below to
           // your App Extension name:
           '!node_modules/@blocksley/quasar-app-extension-blocksley'
@@ -126,29 +109,29 @@ module.exports = function (ctx) {
         theme_color: '#027be3',
         icons: [
           {
-            'src': 'statics/icons/icon-128x128.png',
-            'sizes': '128x128',
-            'type': 'image/png'
+            src: 'statics/icons/icon-128x128.png',
+            sizes: '128x128',
+            type: 'image/png'
           },
           {
-            'src': 'statics/icons/icon-192x192.png',
-            'sizes': '192x192',
-            'type': 'image/png'
+            src: 'statics/icons/icon-192x192.png',
+            sizes: '192x192',
+            type: 'image/png'
           },
           {
-            'src': 'statics/icons/icon-256x256.png',
-            'sizes': '256x256',
-            'type': 'image/png'
+            src: 'statics/icons/icon-256x256.png',
+            sizes: '256x256',
+            type: 'image/png'
           },
           {
-            'src': 'statics/icons/icon-384x384.png',
-            'sizes': '384x384',
-            'type': 'image/png'
+            src: 'statics/icons/icon-384x384.png',
+            sizes: '384x384',
+            type: 'image/png'
           },
           {
-            'src': 'statics/icons/icon-512x512.png',
-            'sizes': '512x512',
-            'type': 'image/png'
+            src: 'statics/icons/icon-512x512.png',
+            sizes: '512x512',
+            type: 'image/png'
           }
         ]
       }

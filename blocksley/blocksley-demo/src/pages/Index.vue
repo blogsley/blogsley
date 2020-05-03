@@ -4,11 +4,7 @@
   </q-page>
 </template>
 
-<style>
-</style>
-
 <script>
-// import { BlocksleyState, serialize, render } from '@blocksley/blocksley'
 import { BlocksleyState } from '@blocksley/blocksley'
 import { Title, List, Image, Paragraph, Heading, Html, Page } from '@blocksley/blocksley/src/blocks'
 

@@ -28,37 +28,37 @@ export default {
       blocks: [
     {
       id: nanoid(),
-      name: 'paragraph',
+      name: 'Paragraph',
       title: 'Paragraph',
       icon: 'mdi-format-paragraph'
     },
     {
       id: nanoid(),
-      name: 'heading',
+      name: 'Heading',
       title: 'Heading',
       icon: 'mdi-alpha-h'
     },
     {
       id: nanoid(),
-      name: 'list',
+      name: 'List',
       title: 'List',
       icon: 'mdi-format-list-bulleted'
     },
     {
       id: nanoid(),
-      name: 'image',
+      name: 'Image',
       title: 'Image',
       icon: 'mdi-image'
     },
     {
       id: nanoid(),
-      name: 'html',
+      name: 'Html',
       title: 'HTML',
       icon: 'mdi-language-html5'
     },
     {
       id: nanoid(),
-      name: 'quote',
+      name: 'Quote',
       title: 'Quote',
       icon: 'format_quote'
     }

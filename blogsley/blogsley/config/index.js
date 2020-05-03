@@ -4,8 +4,8 @@ const DotEnv = require('dotenv')
 
 module.exports = function (dev) {
   const envPath = path.resolve(__dirname, `.env`)
-  console.log('dotenv')
   const dotenv = DotEnv.config({path: envPath}).parsed
+  console.log('dotenv')
   console.log(dotenv)
 
   var serverUrl = process.env['SERVER_URL']
@@ -27,7 +27,6 @@ module.exports = function (dev) {
     process.env['SUBSCRIPTIONS_URL'] = subscriptionslUrl = `ws://${url_domain}:${url_port}/graphql/`
   }
   // Need to stringify for webpack
-  console.log('env')
   const env = Object.assign({}, process.env)
   //console.log(env)
 
@@ -36,6 +35,8 @@ module.exports = function (dev) {
       env[key] = JSON.stringify(env[key])
     }
   }
-  console.log(env)
+  // console.log('env')
+  // console.log(env)
+  
   return env
 }

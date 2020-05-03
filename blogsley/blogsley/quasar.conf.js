@@ -1,10 +1,7 @@
-path = require('path');
-webpack = require('webpack')
-config = require('./config')
+const webpack = require('webpack')
+const config = require('./config')
 
-CopyWebpackPlugin = require('copy-webpack-plugin')
-
-const distDir = '../../dist'
+const distDir = 'dist'
 const publicPath = '/'
 
 module.exports = function (ctx) {
@@ -114,16 +111,6 @@ module.exports = function (ctx) {
             'process.env': config(ctx.dev)
           })
         ])
-        if(!ctx.dev) {
-          cfg.plugins.push(
-            new CopyWebpackPlugin([
-              {
-                from: '_redirects',
-                to: cfg.output.path
-              }
-            ])  
-          )
-        }
       }
     },
 
@@ -135,14 +122,15 @@ module.exports = function (ctx) {
 
     // animations: 'all' --- includes all animations
     animations: [],
-
+    /*
     ssr: {
       pwa: false
     },
-
+    */
     pwa: {
-      // workboxPluginMode: 'InjectManifest',
+      workboxPluginMode: 'GenerateSW', // 'GenerateSW' or 'InjectManifest'
       workboxOptions: {
+        navigateFallback: '/index.html',
         skipWaiting: true,
         clientsClaim: true,
         runtimeCaching: [{
@@ -163,29 +151,29 @@ module.exports = function (ctx) {
         theme_color: '#007d7e',
         icons: [
           {
-            'src': 'statics/icons/icon-128x128.png',
-            'sizes': '128x128',
-            'type': 'image/png'
+            src: 'statics/icons/icon-128x128.png',
+            sizes: '128x128',
+            type: 'image/png'
           },
           {
-            'src': 'statics/icons/icon-192x192.png',
-            'sizes': '192x192',
-            'type': 'image/png'
+            src: 'statics/icons/icon-192x192.png',
+            sizes: '192x192',
+            type: 'image/png'
           },
           {
-            'src': 'statics/icons/icon-256x256.png',
-            'sizes': '256x256',
-            'type': 'image/png'
+            src: 'statics/icons/icon-256x256.png',
+            sizes: '256x256',
+            type: 'image/png'
           },
           {
-            'src': 'statics/icons/icon-384x384.png',
-            'sizes': '384x384',
-            'type': 'image/png'
+            src: 'statics/icons/icon-384x384.png',
+            sizes: '384x384',
+            type: 'image/png'
           },
           {
-            'src': 'statics/icons/icon-512x512.png',
-            'sizes': '512x512',
-            'type': 'image/png'
+            src: 'statics/icons/icon-512x512.png',
+            sizes: '512x512',
+            type: 'image/png'
           }
         ]
       }
