@@ -2,7 +2,9 @@ const webpack = require('webpack')
 const config = require('./config')
 
 const distDir = 'dist'
-const publicPath = '/'
+
+// const publicPath = '/'
+const publicPath = process.env.PUBLIC_PATH
 
 module.exports = function (ctx) {
   return {
