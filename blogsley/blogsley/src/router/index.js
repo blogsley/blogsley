@@ -23,7 +23,8 @@ export default function ({ store }) {
   })
 
   router.beforeEach((to, from, next) => {
-    if (to.path !== '/login' && !store.state.user.isLoggedIn) {
+    console.log('isLoggedIn', store.getters.isLoggedIn)
+    if (to.path !== '/login' && !store.getters.isLoggedIn) {
       if (process.env.AUTH_USER && process.env.AUTH_PWD) {
         store.dispatch('login', {
           username: process.env.AUTH_USER,

@@ -17,11 +17,17 @@ import { UiMixin, PageMixin, UserMixin } from 'src/mixins'
 export default {
   name: 'LoginPage',
   mixins: [UiMixin, PageMixin, UserMixin],
+  props: ['isLogout'],
   data () {
     return {
       title: 'Login',
       username: '',
       password: ''
+    }
+  },
+  mounted () {
+    if (this.isLogout) {
+      this.$store.dispatch('logout')
     }
   },
   methods: {
@@ -31,6 +37,8 @@ export default {
         password: this.password
       }).then(() => {
         this.$router.push('/')
+      }).catch(() => {
+        console.log('bad login')
       })
     }
   }

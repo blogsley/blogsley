@@ -1,27 +1,18 @@
 // import axios from 'axios'
 import jwtDecode from 'jwt-decode'
 import gql from 'graphql-tag'
-
 const directives = process.env.STANDALONE ? '@client' : ''
 
 const state = {
-  authStatus: '',
-  authToken: null,
+  isLoggedIn: false,
+  pending: false,
   user: null
 }
 
 const getters = {
-  authStatus: (state) => {
-    return state.authStatus
-  },
   isLoggedIn: (state) => {
-    if (localStorage.getItem('user') !== null) {
-      state.authStatus = 'success'
-    }
-    return state.authStatus === 'success'
-  },
-  authToken: (state) => {
-    return state.authToken
+    // return state.isLoggedIn
+    return localStorage.getItem('user')
   },
   user: (state) => {
     return state.user
@@ -47,9 +38,9 @@ const actions = {
           data
         }
       }).then((data) => {
-        // console.log('login success')
+        console.log('login success')
         console.log(data)
-        state.authStatus = 'success'
+        state.isLoggedIn = true
         commit('loginSuccess', data.data.login)
         resolve()
       })
@@ -62,30 +53,30 @@ const actions = {
 
 const mutations = {
   login: (state) => {
-    state.authStatus = 'pending'
+    state.pending = true
   },
   loginSuccess: (state, data) => {
-    console.log('login success')
     if (process.env.STANDALONE) {
-      state.authStatus = 'success'
+      state.isLoggedIn = true
+      state.pending = false
       return
     }
     const token = data.token
-    state.authToken = token
     localStorage.setItem('user-token', token)
-    console.log('Token', token)
-
     const user = jwtDecode(token)
-    state.user = user
-    localStorage.setItem('user', user)
+    user.token = token
+
+    console.log('Token', token)
     console.log('User', user)
 
-    state.authStatus = 'success'
+    localStorage.setItem('user', user)
+    state.user = user
+
+    state.isLoggedIn = true
+    state.pending = false
   },
   logout: (state) => {
-    console.log('logout')
-    state.authStatus = ''
-    state.authToken = null
+    state.isLoggedIn = false
     state.user = null
     localStorage.removeItem('user')
     localStorage.removeItem('user-token')

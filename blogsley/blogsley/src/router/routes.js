@@ -14,6 +14,7 @@ const routes = [
     component: () => import('layouts/DefaultLayout.vue'),
     children: [
       { path: 'login', component: () => import('pages/Login.vue') },
+      { path: 'logout', component: () => import('pages/Login.vue'), props: { isLogout: true } },
       { path: 'pages/create', component: () => import('pages/Pages/Create'), props: true },
       { path: 'pages/:id', component: () => import('pages/Pages/Update'), props: true },
       // { path: 'pages/:id', component: () => import('pages/Pages/Edit'), props: true },

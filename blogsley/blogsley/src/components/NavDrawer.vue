@@ -17,6 +17,9 @@
       <router-link to="/images">
       <q-btn flat icon="mdi-folder-image"/>
       </router-link>
+      <router-link to="/logout">
+      <q-btn flat icon="power_settings_new"/>
+      </router-link>
     </div>
     <div class="navbox">
       <div v-bind:is="navbox" />
