@@ -2,7 +2,7 @@
 <div class="fit">
   <navbox-shell>
     <q-list>
-      <q-item to="/users/create" exact>
+      <q-item to="/users/create" exact v-if="$iam.needs('Admin')">
         <q-item-section avatar>
           <q-icon name="mdi-account-plus-outline" />
         </q-item-section>

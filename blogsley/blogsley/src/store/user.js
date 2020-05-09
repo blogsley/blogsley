@@ -1,13 +1,14 @@
-// import axios from 'axios'
 import jwtDecode from 'jwt-decode'
 import gql from 'graphql-tag'
+import { Identity, Anonymous } from '../iam'
 
 const directives = process.env.STANDALONE ? '@client' : ''
 
 const state = {
   authStatus: '',
   authToken: null,
-  user: null
+  user: null,
+  identity: new Anonymous()
 }
 
 const getters = {
@@ -25,6 +26,9 @@ const getters = {
   },
   user: (state) => {
     return state.user
+  },
+  identity: (state) => {
+    return state.identity
   }
 }
 
@@ -79,6 +83,8 @@ const mutations = {
     state.user = user
     localStorage.setItem('user', user)
     console.log('User', user)
+
+    state.identity = Identity.create(user.role)
 
     state.authStatus = 'success'
   },
