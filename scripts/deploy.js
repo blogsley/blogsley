@@ -1,6 +1,6 @@
 const { execSync } = require('child_process')
 
-execSync('rimraf dist', { stdio: 'inherit'})
+// execSync('rimraf dist', { stdio: 'inherit'})
 
 const { SITE_ID } = process.env
 
