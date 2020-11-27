@@ -1,8 +1,7 @@
 const webpack = require('webpack')
 const config = require('./config')
 
-// const distDir = 'dist'
-const distDir = '../../dist'
+const distDir = 'dist'
 
 // const publicPath = '/'
 const publicPath = process.env.PUBLIC_PATH
