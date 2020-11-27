@@ -109,8 +109,6 @@ const createServerClient = function () {
 
   // Create the subscription websocket link
   const wsLink = new WebSocketLink({
-    // uri: 'ws://localhost:3000/subscriptions',
-    // uri: 'ws://localhost:5000/subscriptions',
     uri: subscriptionsUrl,
     options: {
       reconnect: true
