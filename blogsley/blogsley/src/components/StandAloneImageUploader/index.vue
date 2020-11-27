@@ -1,7 +1,6 @@
 <template>
   <form enctype="multipart/form-data" novalidate v-if="isInitial || isSaving">
     <div class="q-pa-md row items-start q-gutter-md">
-      <!-- <ImageCard v-for="image in images" :key="image.id" :image="image" @click.native="select(edge.node)" clickable/> -->
       <ImageCard v-for="image in images" :key="image.id" :image="image"/>
     </div>
     <div class="dropbox">

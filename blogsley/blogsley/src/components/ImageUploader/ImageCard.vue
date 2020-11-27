@@ -39,7 +39,7 @@ export default {
       if (this.image.filename.length === 0) {
         return 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=='
       }
-      return process.env.SERVER_URL + '/images/' + this.image.filename + '?w=200&h=160'
+      return '/images/' + this.image.filename + '?w=200&h=160'
     }
   },
   mounted () {

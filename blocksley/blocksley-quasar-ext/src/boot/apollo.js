@@ -18,7 +18,7 @@ const defaultOptions = {
 // "async" is optional
 export default async ({ app, store, Vue }) => {
   const client = new ApolloClient({
-    uri: process.env.SERVER_URL + '/graphql/',
+    uri: '/graphql/',
     fetchOptions: {
       credentials: 'include'
     },

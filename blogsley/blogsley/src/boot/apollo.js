@@ -4,13 +4,15 @@ import resolvers from '../graphql/resolvers'
 import VueApollo from 'vue-apollo'
 import { ApolloClient } from 'apollo-client'
 import { InMemoryCache } from 'apollo-cache-inmemory'
-import { createHttpLink } from 'apollo-link-http'
+// import { createHttpLink } from 'apollo-link-http'
 import { onError } from 'apollo-link-error'
 import { ApolloLink, split } from 'apollo-link'
 import { setContext } from 'apollo-link-context'
 // Subscriptions
 import { WebSocketLink } from 'apollo-link-ws'
 import { getMainDefinition } from 'apollo-utilities'
+// Uploads
+import { createUploadLink } from 'apollo-upload-client'
 //
 const STANDALONE = process.env.STANDALONE
 
@@ -76,9 +78,19 @@ const createStandaloneClient = function () {
 }
 
 const createServerClient = function () {
-  const graphqlUrl = process.env.GRAPHQL_URL ? process.env.GRAPHQL_URL : window.location.origin
-  const subscriptionsUrl = process.env.SUBSCRIPTIONS_URL ? process.env.SUBSCRIPTIONS_URL : window.location.origin
-  const httpLink = createHttpLink({
+  // const url_object = new URL(window.location.origin)
+  const url_object = new URL(process.env.GRAPHQL_URL)
+  const url_protocol = url_object.protocol
+  const url_domain = url_object.hostname
+  const url_port = url_object.port
+
+  const graphqlUrl = `${url_protocol}//${url_domain}:${url_port}/graphql/`
+  const subscriptionsUrl = `ws://${url_domain}:${url_port}/graphql/`
+
+  /* const httpLink = createHttpLink({
+    uri: graphqlUrl
+  }) */
+  const httpLink = createUploadLink({
     uri: graphqlUrl
   })
 
