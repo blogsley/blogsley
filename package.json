@@ -2,7 +2,7 @@
   "name": "blogsley",
   "private": true,
   "scripts": {
-    "deploy": "node -p 'process.env' ./scripts/deploy.js"
+    "deploy": "node ./scripts/deploy.js"
   },
   "dependencies": {},
   "devDependencies": {
