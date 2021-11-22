@@ -3,6 +3,7 @@ const { execSync } = require('child_process')
 execSync('rimraf dist', { stdio: 'inherit'})
 
 const { SITE_ID } = process.env
+
 /*
 switch (SITE_ID) {
   case '@blocksley/blocksley-demo':
