@@ -32,7 +32,7 @@ Navigate to the main package
 
 Launch Blogsley in serverless/demo development mode:
 
-        STANDALONE=true quasar dev
+        VITE_STANDALONE=true quasar dev
 
 Launch Blogsley in development mode:
 
