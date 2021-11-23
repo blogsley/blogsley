@@ -22,6 +22,8 @@ class Users {
   }
 
   async create (data) {
+    console.log('User::create')
+    console.log(data)
     const id = await db.users.put(data)
     return { id }
   }

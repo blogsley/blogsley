@@ -28,7 +28,7 @@ import { store } from "./store"
 import {Workbox} from 'workbox-window';
 
 if ('serviceWorker' in navigator) {
-  const wb = new Workbox('sw.js', { type: import.meta.env.DEV ? 'module' : 'classic' });
+  const wb = new Workbox('/sw.js', { type: import.meta.env.DEV ? 'module' : 'classic' });
 
   wb.register();
 }

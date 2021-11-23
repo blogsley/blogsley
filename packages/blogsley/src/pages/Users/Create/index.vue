@@ -51,7 +51,7 @@ export default {
           }`,
         // Parameters
         variables: {
-          data: this.user
+          data: Object.assign({}, this.user)
         }
       }).then((data) => {
         console.log(data)

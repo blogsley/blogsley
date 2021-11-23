@@ -6,7 +6,7 @@
     theme="light"
     animation="fade"
     trigger = "manual"
-    :arrow="true">
+    arrow>
 
 <template v-slot:content>
     <slot></slot>

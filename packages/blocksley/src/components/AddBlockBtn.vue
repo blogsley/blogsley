@@ -2,10 +2,9 @@
 <tippy 
     interactive
     :animate-fill="false" 
-    theme=""
     animation="fade"
     trigger="click"
-    :arrow="true">
+    arrow>
 
   <q-btn fab-mini icon="add"/>
   <template v-slot:content>

@@ -23,7 +23,6 @@
         <tippy 
             interactive
             :animate-fill="false" 
-            theme=""
             animation="fade"
             trigger="click"
             arrow>

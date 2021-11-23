@@ -19,9 +19,7 @@
 <tippy
     interactive
     placement="top-start"
-    :sticky="true"
     boundary="viewport"
-    theme=""
     trigger="click"
     arrow>
   <q-btn flat icon="menu"/>
