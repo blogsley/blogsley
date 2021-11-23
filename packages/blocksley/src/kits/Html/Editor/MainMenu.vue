@@ -1,6 +1,6 @@
 <template>
   <editor-menu-bar :editor="editor" class="menu-btn-group">
-    <q-btn-group class="menu-btn-group">
+    <q-btn-group flat class="menu-btn-group">
 
       <q-btn
         @click="editor.chain().focus().undo().run()"
@@ -20,36 +20,49 @@
         <q-icon name="mdi-format-paragraph" />
       </q-btn>
 
-      <q-btn
-        @click="editor.chain().focus().toggleHeading({ level: 2 }).run()"
-        :class="editor.isActive('heading', { level: 2 }) ? 'is-active' : ''"
-      >
-        h2
-      </q-btn>
-      <q-btn
-        @click="editor.chain().focus().toggleHeading({ level: 3 }).run()"
-        :class="editor.isActive('heading', { level: 3 }) ? 'is-active' : ''"
-      >
-        h3
-      </q-btn>
-      <q-btn
-        @click="editor.chain().focus().toggleHeading({ level: 4 }).run()"
-        :class="editor.isActive('heading', { level: 4 }) ? 'is-active' : ''"
-      >
-        h4
-      </q-btn>
-      <q-btn
-        @click="editor.chain().focus().toggleHeading({ level: 5 }).run()"
-        :class="editor.isActive('heading', { level: 5 }) ? 'is-active' : ''"
-      >
-        h5
-      </q-btn>
-      <q-btn
-        @click="editor.chain().focus().toggleHeading({ level: 6 }).run()"
-        :class="editor.isActive('heading', { level: 6 }) ? 'is-active' : ''"
-      >
-        h6
-      </q-btn>
+      <tippy
+          interactive
+          placement="top-start"
+          boundary="viewport"
+          trigger="mouseenter"
+          arrow>
+        <q-btn flat>H</q-btn>
+        <template v-slot:content>
+          <q-btn-group flat class="menu-btn-group">
+            <q-btn
+              @click="editor.chain().focus().toggleHeading({ level: 2 }).run()"
+              :class="editor.isActive('heading', { level: 2 }) ? 'is-active' : ''"
+            >
+              h2
+            </q-btn>
+            <q-btn
+              @click="editor.chain().focus().toggleHeading({ level: 3 }).run()"
+              :class="editor.isActive('heading', { level: 3 }) ? 'is-active' : ''"
+            >
+              h3
+            </q-btn>
+            <q-btn
+              @click="editor.chain().focus().toggleHeading({ level: 4 }).run()"
+              :class="editor.isActive('heading', { level: 4 }) ? 'is-active' : ''"
+            >
+              h4
+            </q-btn>
+            <q-btn
+              @click="editor.chain().focus().toggleHeading({ level: 5 }).run()"
+              :class="editor.isActive('heading', { level: 5 }) ? 'is-active' : ''"
+            >
+              h5
+            </q-btn>
+            <q-btn
+              @click="editor.chain().focus().toggleHeading({ level: 6 }).run()"
+              :class="editor.isActive('heading', { level: 6 }) ? 'is-active' : ''"
+            >
+              h6
+            </q-btn>
+          </q-btn-group>
+        </template>
+      </tippy>
+
 
       <q-btn @click="editor.chain().focus().toggleBulletList().run()" :class="{ 'is-active': editor.isActive('bulletList') }">
         <q-icon name="mdi-format-list-bulleted" />

@@ -45,7 +45,6 @@
 </template>
 
 <script>
-//import EditorBubbleMenu from '../../../components/EditorBubbleMenu.vue'
 import { BubbleMenu } from '@tiptap/vue-3'
 
 export default {
@@ -53,7 +52,6 @@ export default {
   mixins: [ ],
   props: ['vu', 'editor'],
   components: {
-    //EditorBubbleMenu
     BubbleMenu
   },
   data () {

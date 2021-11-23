@@ -19,7 +19,7 @@
       </router-link>
     </div>
 
-    <div id="blocksley-toolbox" class="navbox"></div>
+    <div id="blocksley-toolbox" class="toolbox"></div>
 
   </q-drawer>
 </template>
@@ -45,7 +45,7 @@ export default {
 </script>
 
 <style lang="scss">
-  .navbox {
+  .toolbox {
     white-space: nowrap;
     overflow: hidden;
     height: 100%;

@@ -4,7 +4,7 @@
     class="drawer"
     side="left"
   >
-      <div class="button-column" style="float: left; height: 100%">
+      <div class="button-column" style="float: left">
       <router-link to="/" :exact="true">
       <q-btn flat icon="home"/>
       </router-link>
