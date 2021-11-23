@@ -5,6 +5,7 @@
 </template>
 
 <script>
+import { shallowRef } from '@vue/reactivity'
 import gql from 'graphql-tag'
 
 import { BlocksleyState, serialize, deserialize, render } from '@blocksley/blocksley'
@@ -26,8 +27,8 @@ export default {
       title: 'Page',
       postId: this.$route.params.id,
       state: new BlocksleyState({
-        blockChooser: BlockChooser,
-        imageChooser: ImageChooser
+        blockChooser: shallowRef(BlockChooser),
+        imageChooser: shallowRef(ImageChooser)
       })
     }
   },

@@ -6,8 +6,8 @@
     animation="fade"
     trigger="click"
     :arrow="true">
-    <!--<q-btn fab-mini flat icon="add_circle_outline"/>-->
-    <q-btn fab-mini icon="add"/>
+
+  <q-btn fab-mini icon="add"/>
   <template v-slot:content>
     <component :is="state.blockChooser" :select="select" />
   </template>

@@ -4,8 +4,9 @@
     <template v-slot:title><span>HTML</span></template>
     <template v-slot:menu><main-menu :vu="this" :editor="editor"/></template>
     <template v-slot:aux-menu><aux-menu :editor="editor" /></template>
-    <floating-menu :editor="editor" />
     <editor-content class="editor__content" :editor="editor" />
+    <floating-menu :editor="editor" />
+
     <q-dialog v-model="showImgChooser">
       <component :is="state.imageChooser" :select="insertImage" />
     </q-dialog>

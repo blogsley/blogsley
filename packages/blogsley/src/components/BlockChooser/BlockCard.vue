@@ -52,13 +52,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.my-card {
+  background: none;
+}
 .q-card__section {
-  padding: 4px
+  padding: 4px;
 }
 .no-hover {
-   border: 1px solid white
+   border: 1px solid gray;
  }
  .hover {
-   border: 1px solid gray
+   border: 1px solid white;
  }
 </style>

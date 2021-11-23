@@ -111,20 +111,18 @@ class ImageNode {
 export default {
   Query: {
     allBlocks: async (_) => {
-      console.log('allBlocks')
-      console.log(_)
+      //console.log('allBlocks')
       // const posts = await allPosts(after, before, first, last)
       const blocks = await Blocks.all()
-      console.log(blocks)
+      //console.log(blocks)
       const data = new BlockConnection(blocks)
       return data
     },
     allUsers: async (_) => {
-      console.log('allUsers')
-      console.log(_)
+      //console.log('allUsers')
       // const posts = await allPosts(after, before, first, last)
       const users = await Users.all()
-      console.log(users)
+      //console.log(users)
       const data = new UserConnection(users)
       return data
     },
@@ -136,11 +134,10 @@ export default {
 
     // allPosts: async (_, { after, before, first, last }) => {
     allPosts: async (_) => {
-      console.log('allPosts')
-      console.log(_)
+      //console.log('allPosts')
       // const posts = await allPosts(after, before, first, last)
       const posts = await Posts.all()
-      console.log(posts)
+      //console.log(posts)
       const data = new PostConnection(posts)
       return data
     },
@@ -150,10 +147,9 @@ export default {
       return data
     },
     allImages: async (_) => {
-      console.log('allImages')
-      console.log(_)
+      //console.log('allImages')
       const images = await Images.all()
-      console.log(images)
+      //console.log(images)
       const data = new ImageConnection(images)
       return data
     },

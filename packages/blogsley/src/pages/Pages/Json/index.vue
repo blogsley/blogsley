@@ -14,7 +14,6 @@ import { BlocksleyState, deserialize } from '@blocksley/blocksley'
 
 import { UiMixin, PageMixin } from '@mixins'
 import Navbox from './Navbox.vue'
-import ImageChooser from '@components/ImageChooser/index.vue'
 
 export default {
   mixins: [UiMixin, PageMixin],
@@ -25,9 +24,7 @@ export default {
     return {
       title: 'Page JSON',
       postId: this.$route.params.id,
-      state: new BlocksleyState({
-        imageChooser: ImageChooser
-      })
+      state: new BlocksleyState()
     }
   },
   computed: {

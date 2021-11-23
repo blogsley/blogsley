@@ -11,7 +11,7 @@ export class Quote extends Rich {
     if (options.value) {
       this.html = '<blockquote>' + this.value + '</blockquote>'
     } else if (!this.html) {
-      this.html = '<blockquote></blockquote>'
+      this.html = '<blockquote><p></p></blockquote>'
     }
     this.editor = new Editor({
       content: this.html,

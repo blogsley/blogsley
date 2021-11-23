@@ -39,10 +39,6 @@ export default {
     block: function () { return this.state.block }
   },
   mounted () {
-    this.state = createDemoState({
-      blockChooser: BlockChooser,
-      imageChooser: ImageChooser
-    })
   },
   beforeDestroy () {
   },

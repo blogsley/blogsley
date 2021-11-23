@@ -21,17 +21,17 @@ class Posts {
 
   async get (id) {
     const post = await db.posts.get(id)
-    console.log('postQuery')
-    console.log(post)
+    //console.log('postQuery')
+    //console.log(post)
     return post
   }
 
   async all (after, before, first, last) {
-    console.log('allPosts')
+    //console.log('allPosts')
     const results = await db
       .table('posts')
       .toArray()
-    console.log(results)
+    //console.log(results)
     return results
   }
 

@@ -15,7 +15,8 @@
 }
 
 .editor__content p.is-editor-empty:first-child::before {
-  content: attr(data-empty-text);
+  //content: attr(data-empty-text);
+  content: attr(data-placeholder);
   float: left;
   color: #aaa;
   pointer-events: none;
@@ -23,13 +24,14 @@
   font-style: italic;
 }
 
-.editor__content blockquote.is-editor-empty:first-child::after {
-  content: attr(data-empty-text);
+/*.editor__content blockquote.is-editor-empty:first-child::after {
+  //content: attr(data-empty-text);
+  content: attr(data-placeholder);
   color: #aaa;
   pointer-events: none;
   height: 0;
   font-style: italic;
-}
+}*/
 
 .editor__content {
   font-size: 16px;

@@ -1,14 +1,7 @@
 import { plugin as VueTippy } from 'vue-tippy'
 
-import '../css/tippy/themes/light.css'
-import '../css/tippy/themes/light-border.css'
-import '../css/tippy/themes/material.css'
-import '../css/tippy/themes/translucent.css'
-
-import '../css/tippy/tippy.css'
-
-//import 'tippy.js/themes/light.css'
-//import 'tippy.js/dist/tippy.css'
+import 'tippy.js/themes/light.css'
+import 'tippy.js/dist/tippy.css'
 
 //import 'tippy.js/themes/light-border.css'
 //import 'tippy.js/themes/material.css'

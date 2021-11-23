@@ -47,10 +47,10 @@ const state = {
       commit('toolDrawerOpen', !state.toolDrawerOpen)
     },
     setView: ({ commit }, data) => {
-      commit('view', data)
+      commit('view', shallowRef(data))
     },
     setVu: ({ commit }, data) => {
-      commit('vu', data)
+      commit('vu', shallowRef(data))
     },
     setPage: ({ commit }, data) => {
       commit('page', data)

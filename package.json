@@ -1,9 +1,6 @@
 {
   "name": "blogsley",
   "private": true,
-  "scripts": {
-    "deploy": "node ./scripts/deploy.js"
-  },
   "dependencies": {},
   "devDependencies": {
     "lerna": "^4.0.0"

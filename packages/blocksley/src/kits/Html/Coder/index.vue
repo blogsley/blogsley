@@ -16,7 +16,6 @@ import prettier from "prettier/standalone";
 import parserHtml from "prettier/parser-html";
 
 import MainMenu from './MainMenu.vue'
-import FloatingMenu from './FloatingMenu.vue'
 import AuxMenu from './AuxMenu.vue'
 
 import CodeEditor from '../../../components/CodeEditor.vue'
@@ -30,7 +29,6 @@ export default {
   components: {
     CoderShell,
     MainMenu,
-    FloatingMenu,
     AuxMenu
   },
   data () {
@@ -41,12 +39,11 @@ export default {
   mounted () {
     console.log('cm mounted')
     const editor = this.editor = CodeMirror.fromTextArea(this.$refs.editor, {
-      // theme: 'miakai',
       mode: 'htmlmixed',
       lineNumbers: true,
       styleActiveLine: true,
       matchBrackets: true,
-      tabSize: 4
+      tabSize: 2
     })
 
     const html = prettier.format(this.block.html, {
@@ -56,6 +53,12 @@ export default {
 
     editor.setValue(html)
   },
+  unmounted () {
+    const value = this.editor.getValue()
+    this.block.html = value
+    this.block.editor.commands.setContent(value)
+  },
+
   methods: {
   }
 }

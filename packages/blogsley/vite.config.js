@@ -21,6 +21,7 @@ export default defineConfig({
      outDir: 'dist',
   },
   publicDir: 'public',
+  //css: { preprocessorOptions: { scss: { charset: false } } },
   //assetsInclude: ['/src/assets/*.svg'],
 
   plugins: [

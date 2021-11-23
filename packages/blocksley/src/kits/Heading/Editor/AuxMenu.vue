@@ -1,5 +1,6 @@
 <template>
-    <bubble-menu :editor="editor" :tippy-options="{ theme: 'light'}">
+    <!-- <bubble-menu :editor="editor" :tippy-options="{ theme: 'light'}"> -->
+    <bubble-menu :editor="editor">
 
       <q-btn-group flat class="bubble-menu">
 

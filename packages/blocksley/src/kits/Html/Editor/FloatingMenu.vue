@@ -1,6 +1,6 @@
 <template>
-  <floating-menu :editor="editor">
-    <q-btn-group class="bubble-menu">
+  <floating-menu :editor="editor" :tippy-options="{  maxWidth: 'none' }">
+    <q-btn-group flat class="bubble-menu">
       <q-btn
         @click="editor.chain().focus().setParagraph().run()" :class="{ 'is-active': editor.isActive('paragraph') }"
       >
