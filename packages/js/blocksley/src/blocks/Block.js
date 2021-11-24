@@ -17,7 +17,7 @@ export class Block {
     this.children = []
     this.width = 256
     this.height = 256
-    this.class = [] //TODO:smelly:has to do with style
+    this.class = ['block-default'] //css class
     Object.assign(this, options)
   }
   get type () {

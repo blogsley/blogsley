@@ -6,27 +6,27 @@
     @focus="onFocus"
     @blur="onBlur"
   >
-    <div v-if="parent" class="shell-header" :class="{'sticky-header': stickyHeader}">
+    <div class="shell-header" :class="{'sticky-header': stickyHeader}">
+    <!-- <div class="shell-header" :class="{'sticky-header': stickyHeader}"> -->
       <q-bar class="shell-bar" @click="barClick">
-        <shell-fab direction="right" icon="drag_indicator" >
+        <!--<shell-fab direction="right" icon="drag_indicator" >
           <q-btn fab-mini icon="keyboard_arrow_up"  @click="frame.move('up')"/>
           <q-btn  fab outlined class="grippy" icon="drag_indicator" />
           <q-btn  fab-mini icon="keyboard_arrow_down"  @click="frame.move('down')"/>
-        </shell-fab>
-        <slot name="title"></slot>
-        <!--<add-block-btn :select="insertBlock"/>-->
-        <div v-if="this.$slots.menu" ref="toolbar" v-show="toolbarVisible" class="shell-toolbar">
-          <slot name="menu"></slot>
-        </div>
-        <div><slot name="aux-menu"></slot></div>
+        </shell-fab>-->
+        <q-btn flat icon="drag_indicator" class="grippy"/>
+        <slot name="title"/>
         <q-space />
         <tippy 
             interactive
             :animate-fill="false" 
+            theme="light"
             animation="fade"
             trigger="click"
             arrow>
-          <q-btn fab-mini flat icon="more_vert"/>
+          <template v-slot:default>
+            <q-btn fab-mini flat icon="more_vert"/>
+          </template>
           <template v-slot:content>
           <q-list>
             <q-item @click="frame.use('Viewer')" clickable>
@@ -37,12 +37,12 @@
                 <q-item-label>View</q-item-label>
               </q-item-section>
             </q-item>
-            <q-item @click="frame.use('Coder')" clickable>
+            <q-item @click="frame.use('Editor')" clickable>
               <q-item-section avatar>
-                <q-icon name="mdi-language-html5" />
+                <q-icon name="edit" />
               </q-item-section>
               <q-item-section>
-                <q-item-label>HTML</q-item-label>
+                <q-item-label>Edit</q-item-label>
               </q-item-section>
             </q-item>
             <q-separator/>
@@ -60,30 +60,23 @@
 
       </q-bar>
 
-      <!--<q-toolbar v-if="this.$slots.menu" ref="toolbar" v-show="toolbarVisible" class="shell-toolbar">
-        <slot v-if="!this.menu.isActive" name="menu"></slot>
-        <slot v-else name="aux"></slot>
-      </q-toolbar>-->
-
+      <q-toolbar v-if="this.$slots.menu" ref="toolbar" v-show="toolbarVisible" class="shell-toolbar">
+        <slot v-if="!this.menu.isActive" name="menu"/>
+        <slot v-else name="aux"/>
+      </q-toolbar>
     </div>
     <div
       class="shell-inner"
       v-bind:class="{ 'child-shell': !isRoot }"
       @contextmenu="contentContext"
     >
-      <slot></slot>
-    </div>
-    <div v-if="parent" class="shell-footer">
-      <div class="shell-footer-content">
-        <add-block-btn :select="insertBlock"/>
-      </div>
+      <slot/>
     </div>
   </div>
 </template>
 
 <script>
 import ShellFab from './ShellFab.vue'
-//import SelectionPlugin from '../plugins/Selection'
 import AddBlockBtn from './AddBlockBtn.vue'
 export default {
   name: 'EditorShell',
@@ -130,8 +123,7 @@ export default {
         // console.log('set active child')
         // console.log(child)
         // console.trace()
-        const sibling = child && this.$_activeChild && this.$_activeChild.frame == child.frame
-        if (this.$_activeChild && this.$_activeChild !== child && !sibling) {
+        if (this.$_activeChild && this.$_activeChild !== child) {
           this.$_activeChild.close()
         }
         this.$_activeChild = child
@@ -153,27 +145,6 @@ export default {
     this.frame = this.vu.frame
     this.block = this.vu.block
     // console.log(this.block)
-    const editor = this.editor
-    if (editor) {
-      this.view = editor.view
-      editor.on('focus', this.onEditorFocus)
-      editor.on('blur', this.onEditorBlur)
-      /*this.$nextTick(() => {
-        editor.registerPlugin(SelectionPlugin(
-          this,
-          editor,
-          (menu) => {
-            // the second check ensures event is fired only once
-            if (menu.isActive && this.menu.isActive === false) {
-              this.$emit('show', menu)
-            } else if (!menu.isActive && this.menu.isActive === true) {
-              this.$emit('hide', menu)
-            }
-            this.menu = menu
-          }
-        ))
-      })*/
-    }
     this.onOpen()
   },
   beforeDestroy () {
@@ -215,7 +186,8 @@ export default {
       // console.log(e)
       // TODO: This needs more work
       if (evt.key === 'Escape' && this.parent) {
-        this.close()
+        // this.close()
+        this.frame.use('Editor')
       }
     },
     onFocus (evt) {
@@ -336,89 +308,4 @@ export default {
 </script>
 
 <style lang="scss">
-/*#add-block-btn {
-  opacity: .1;
-  position: absolute;
-  right: 0px;
-  bottom: 0px;
-  -webkit-transform: translateX(-50%);
-  transform: translateX(-50%)
-}
-#add-block-btn:hover {
-  opacity: 1;
-}*/
-
-@mixin sticky() {
-  position: -webkit-sticky;
-  position: sticky;
-}
-
-@mixin shell-background() {
-  //background-color: white !important;
-  background: none !important;
-  //background-image: linear-gradient(17deg,rgba(243,248,255,.03) 63.45%,rgba(207,214,229,.27) 98%);
-  //background-repeat: no-repeat;
-}
-
-.sticky-header {
-  @include sticky();
-  top: 0;
-  opacity: 1;
-  z-index: 999;
-}
-
-.shell-header {
-  @include shell-background();
-}
-
-.shell-footer {
-  position: relative;
-}
-.shell-footer-content {
-  position: relative;
-  //bottom: -32px;
-  left: 50%;
-}
-
-.editor-shell {
-  // position: relative;
-  // width: 100%;
-  max-width: 1080px;
-}
-
-.child-shell {
-  @include shell-background();
-  background-position: 0px -40px;
-  border-bottom: 1px solid rgba(0,0,0,.27);
-  box-shadow: 0px 11px 8px -10px #CCC;
-}
-
-.shell-inner {
-  position: relative;
-}
-  
-/*
-.shell-inner:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-*/
-
-.shell-bar {
-  padding:0px;
-  @include shell-background();
-  border-top: 1px solid rgba(0,0,0,.27);
-  box-shadow: 0px -11px 8px -10px #CCC;
-}
-
-.shell-toolbar {
-  @include shell-background();
-}
-
-.shell-menu {
-  // position: absolute;
-  // left: 0;
-  // top: -16px;
-}
 </style>

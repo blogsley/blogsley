@@ -4,6 +4,7 @@
       <draggable v-model="block.children"
         group="blocks"
         handle=".grippy"
+        ghost-class="ghost"
         @start="onDragStart()"
         @end="onDragEnd()"
         item-key="id"
@@ -11,7 +12,6 @@
         <frame v-for="child in block.children"
           :key="child.id"
           :block="child"
-          class="noselect"
           @action="onAction"
           />
       </draggable>
@@ -78,7 +78,11 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+.ghost {
+  opacity: 0.5;
+  background: #c8ebfb;
+}
 .page-editor {
   // padding: 16px;
   // padding: 34px 16px 16px 16px;

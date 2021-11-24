@@ -15,9 +15,9 @@
       <img ref="image" :src="block.src" :width="this.block.width" :height="this.block.height" style="object-fit:cover;"/>
     </vue-draggable-resizable>
 
-  <teleport to="#blocksley-toolbox">
-    <toolbox :vu="this"/>
-  </teleport>
+    <teleport to="#blocksley-toolbox">
+      <toolbox :vu="this"/>
+    </teleport>
 
   </editor-shell>
 

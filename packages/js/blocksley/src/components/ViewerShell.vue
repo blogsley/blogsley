@@ -104,7 +104,7 @@ export default {
 
 .viewer-shell {
   position: relative;
-  max-width: 1080px;
+  //max-width: 1080px;
 }
 
 </style>
