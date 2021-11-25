@@ -29,6 +29,7 @@
     "@blocksley/blocksley": "0.2.0-alpha.0",
     "@quasar/extras": "^1.12.0",
     "@vue/apollo-option": "^4.0.0-alpha.15",
+    "apollo-upload-client": "^16.0.0",
     "axios": "^0.24.0",
     "dexie": "^3.2.0",
     "dexie-observable": "^3.0.0-beta.11",

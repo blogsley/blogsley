@@ -2,7 +2,9 @@ import typeDefs from '../graphql/typedefs'
 import resolvers from '../graphql/resolvers'
 
 import { ApolloClient, createHttpLink, InMemoryCache } from '@apollo/client/core'
-
+import { ApolloLink, split } from '@apollo/client/core'
+import { getMainDefinition } from '@apollo/client/utilities'
+import { onError } from "@apollo/client/link/error"
 //import VueApollo from 'vue-apollo'
 import { createApolloProvider } from '@vue/apollo-option'
 
@@ -14,11 +16,14 @@ import { ApolloLink, split } from 'apollo-link'
 import { setContext } from 'apollo-link-context'
 // Subscriptions
 import { WebSocketLink } from 'apollo-link-ws'
-import { getMainDefinition } from 'apollo-utilities'
+import { getMainDefinition } from 'apollo-utilities'*/
 // Uploads
-import { createUploadLink } from 'apollo-upload-client'*/
-//
+import { setContext } from '@apollo/client/link/context'
+import { createUploadLink } from 'apollo-upload-client'
+import { WebSocketLink } from '@apollo/client/link/ws'
 
+
+import config from '../config'
 import { store } from '../store'
 
 const VITE_STANDALONE = import.meta.env.VITE_STANDALONE
@@ -91,7 +96,8 @@ const createStandaloneClient = function () {
 
 const createServerClient = function () {
   // const url_object = new URL(window.location.origin)
-  const url_object = new URL(import.meta.env.GRAPHQL_URL)
+  console.log(config)
+  const url_object = new URL(config.VITE_GRAPHQL_URL)
   const url_protocol = url_object.protocol
   const url_domain = url_object.hostname
   const url_port = url_object.port

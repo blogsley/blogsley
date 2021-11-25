@@ -7,6 +7,6 @@
   },
   "resolutions": {},
   "workspaces": [
-    "packages/js/*"
+    "packages/*"
   ]
 }
