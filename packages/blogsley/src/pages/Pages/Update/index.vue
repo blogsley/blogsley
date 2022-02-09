@@ -54,14 +54,15 @@ export default {
       update (data) {
         const post = data.post
         console.log(post)
-        this.state.block = deserialize(JSON.parse(post.block))
+        //this.state.block = deserialize(JSON.parse(post.block))
+        this.state.block = deserialize(post.block)
         return post
       },
       subscribeToMore: {
         // below is the subscription query.
         document: gql`
-          subscription postEvents($id: ID!) {
-            postEvents(id: $id) {
+          subscription post($id: ID!) {
+            post(id: $id) {
               kind
             }
           }

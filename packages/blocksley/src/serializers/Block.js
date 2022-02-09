@@ -6,8 +6,11 @@ export default class Block {
   serialize (block) {
   }
   deserialize (data) {
-    //console.log('deserializing children')
-    const children = data.children
+    console.log('deserializing children')
+    console.log(data)
+    const children = [...data.children]
+    data = Object.assign({}, data)
+    //const children = data.children
     if (children && Array.isArray(children)) {
       for ( var i = 0; i < children.length; i++) {
         var child = deserialize(children[i])
@@ -15,6 +18,7 @@ export default class Block {
         //console.log(child)
       } 
     }
+    data.children = children
     return data
   }
 }

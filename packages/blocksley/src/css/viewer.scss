@@ -74,9 +74,12 @@ body.body--dark {
   li > ul {
     margin: 0;
   }
-  a {
-    color: inherit;
-  }
+  /*a {
+    color: brown;
+    &:hover {
+      color: goldenrod;
+    }
+  }*/
   blockquote {
     border-left: 3px solid rgba($color-black, 0.1);
     color: rgba($color-black, 0.8);

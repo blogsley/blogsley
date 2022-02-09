@@ -12,7 +12,8 @@ export class Block {
   constructor (options) {
     this.id = nanoid()
     this.status = 'normal'
-    this._value = null
+    //this._value = null
+    this.value = null
     this.html = ''
     this.children = []
     this.width = 256
@@ -26,17 +27,17 @@ export class Block {
   set type (val) {
     //Need this dummy method for deserialization
   }
-  set value (val) {
+  /*set value (val) {
     this._value = val
   }
   get value () {
     return this._value
-  }
+  }*/
   toJSON () {
     return {
       type: this.type,
       id: this.id,
-      _value: this.value,
+      value: this.value,
       html: this.html,
       children: this.children
     }

@@ -5,21 +5,11 @@
     side="left"
   >
       <div class="button-column" style="float: left">
-      <router-link to="/" :exact="true">
-      <q-btn flat icon="home"/>
-      </router-link>
-      <router-link to="/users">
-      <q-btn flat icon="mdi-account-multiple"/>
-      </router-link>
-      <router-link to="/pages">
-      <q-btn flat icon="mdi-book-open-page-variant"/>
-      </router-link>
-      <router-link to="/images">
-      <q-btn flat icon="mdi-folder-image"/>
-      </router-link>
-      <router-link to="/logout">
-      <q-btn flat icon="power_settings_new"/>
-      </router-link>
+      <q-btn to="/" :exact="true" flat icon="home" />
+      <q-btn to="/users" flat icon="mdi-account-multiple" />
+      <q-btn to="/pages" flat icon="mdi-book-open-page-variant"/>
+      <q-btn to="/images" flat icon="mdi-folder-image"/>
+      <q-btn to="/logout" flat icon="power_settings_new"/>
     </div>
     <div class="navbox">
       <component :is="navbox" />

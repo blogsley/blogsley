@@ -49,7 +49,8 @@ export default {
       update (data) {
         const post = data.post
         console.log(post)
-        this.state.block = deserialize(JSON.parse(post.block))
+        //this.state.block = deserialize(JSON.parse(post.block))
+        this.state.block = deserialize(post.block)
         return post
       }
       // fetchPolicy: 'network-only'

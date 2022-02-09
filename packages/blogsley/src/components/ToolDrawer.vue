@@ -5,18 +5,10 @@
     side="right"
   >
     <div class="button-column" style="float: right; height: 100%">
-      <router-link to="/" :exact="true">
-      <q-btn flat icon="home"/>
-      </router-link>
-      <router-link to="/users">
-      <q-btn flat icon="mdi-account-multiple"/>
-      </router-link>
-      <router-link to="/pages">
-      <q-btn flat icon="mdi-book-open-page-variant"/>
-      </router-link>
-      <router-link to="/images">
-      <q-btn flat icon="mdi-folder-image"/>
-      </router-link>
+      <q-btn to="/" :exact="true" flat icon="home"/>
+      <q-btn to="/users" flat icon="mdi-account-multiple"/>
+      <q-btn to="/pages" flat icon="mdi-book-open-page-variant"/>
+      <q-btn to="/images" flat icon="mdi-folder-image"/>
     </div>
 
     <div id="blocksley-toolbox" class="toolbox"></div>
