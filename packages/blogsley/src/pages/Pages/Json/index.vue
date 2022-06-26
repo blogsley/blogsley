@@ -49,8 +49,9 @@ export default {
       update (data) {
         const post = data.post
         console.log(post)
-        //this.state.block = deserialize(JSON.parse(post.block))
-        this.state.block = deserialize(post.block)
+        this.state.block = deserialize(JSON.parse(post.block))
+        //TODO:This isn't working with Dexie.  Actually saving raw to Dexie is a problem
+        //this.state.block = deserialize(post.block)
         return post
       }
       // fetchPolicy: 'network-only'
