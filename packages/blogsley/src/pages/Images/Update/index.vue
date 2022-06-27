@@ -1,6 +1,6 @@
 <template>
   <q-page padding>
-    <Form :image="this.image" />
+    <Form v-if="image" :image="this.image" />
   </q-page>
 </template>
 

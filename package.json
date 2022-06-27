@@ -3,7 +3,7 @@
   "private": true,
   "dependencies": {},
   "devDependencies": {
-    "lerna": "^4.0.0"
+    "lerna": "^5.1.6"
   },
   "resolutions": {},
   "workspaces": [

@@ -95,7 +95,7 @@ export default {
       block: {},
       view: null,
       parent: null,
-      $_activeChild: null,
+      _activeChild: null,
       // toolbarVisible: this.$q.platform.is.desktop,
       toolbarVisible: true,
       menu: {
@@ -117,17 +117,17 @@ export default {
     },
     activeChild: {
       get () {
-        return this.$_activeChild
+        return this._activeChild
       },
       set (child) {
         // console.log('set active child')
         // console.log(child)
         // console.trace()
-        if (this.$_activeChild && this.$_activeChild !== child) {
-          this.$_activeChild.close()
+        if (this._activeChild && this._activeChild !== child) {
+          this._activeChild.close()
         }
-        this.$_activeChild = child
-        if (!this.$_activeChild) {
+        this._activeChild = child
+        if (!this._activeChild) {
           this.showToolbar()
         }
       }

@@ -7,17 +7,17 @@ class Blocks {
 
   async get (id) {
     const block = await db.blocks.get(id)
-    console.log('Blocks::get')
-    console.log(block)
+    //console.log('Blocks::get')
+    //console.log(block)
     return block
   }
 
   async all (after, before, first, last) {
-    console.log('Blocks::all')
     const results = await db
       .table('blocks')
       .toArray()
-    console.log(results)
+    //console.log('Blocks::all')
+    //console.log(results)
     return results
   }
 

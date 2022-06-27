@@ -103,7 +103,7 @@ export default {
       block: {},
       view: null,
       parent: null,
-      $_activeChild: null,
+      _activeChild: null,
       // toolbarVisible: this.$q.platform.is.desktop,
       toolbarVisible: true,
       menu: {
@@ -125,18 +125,19 @@ export default {
     },
     activeChild: {
       get () {
-        return this.$_activeChild
+        return this._activeChild
       },
       set (child) {
-        // console.log('set active child')
-        // console.log(child)
-        // console.trace()
-        const sibling = child && this.$_activeChild && this.$_activeChild.frame == child.frame
-        if (this.$_activeChild && this.$_activeChild !== child && !sibling) {
-          this.$_activeChild.close()
+        console.log('set active child')
+        console.log(child)
+        //console.trace()
+        const sibling = child && this._activeChild && this._activeChild.frame == child.frame
+        if (this._activeChild && this._activeChild !== child && !sibling) {
+          console.log('close child')
+          this._activeChild.close()
         }
-        this.$_activeChild = child
-        if (!this.$_activeChild) {
+        this._activeChild = child
+        if (!this._activeChild) {
           this.showToolbar()
         }
       }
@@ -175,14 +176,15 @@ export default {
       this.$emit('action', action)
     },
     onOpen () {
-      // console.log('shell opened')
+      console.log('shell opened')
       //
       const closest = this.$el.parentElement.closest('.editor-shell')
+      console.log('closest:  ', closest)
       this.parent = closest ? closest.__vue__ : null
 
       if (this.parent) {
-        // console.log('parent shell')
-        // console.log(this.parent)
+        console.log('parent shell')
+        console.log(this.parent)
         this.parent.hideToolbar()
         this.parent.activeChild = this
       }

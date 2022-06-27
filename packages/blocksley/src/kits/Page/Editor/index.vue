@@ -84,9 +84,9 @@ export default {
   background: #c8ebfb;
 }
 .page-editor {
+  padding: 0px;
   // padding: 16px;
   // padding: 34px 16px 16px 16px;
   // padding: 16px 0px 0px 0px;
-  // overflow: hidden;
 }
 </style>

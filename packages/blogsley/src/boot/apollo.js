@@ -20,7 +20,9 @@ import { getMainDefinition } from 'apollo-utilities'*/
 // Uploads
 import { setContext } from '@apollo/client/link/context'
 import { createUploadLink } from 'apollo-upload-client'
-import { WebSocketLink } from '@apollo/client/link/ws'
+//import { WebSocketLink } from '@apollo/client/link/ws'
+import { GraphQLWsLink } from '@apollo/client/link/subscriptions';
+import { createClient } from 'graphql-ws';
 
 
 import config from '../config'
@@ -126,12 +128,19 @@ const createServerClient = function () {
   })
 
   // Create the subscription websocket link
-  const wsLink = new WebSocketLink({
+  /*const wsLink = new WebSocketLink({
     uri: subscriptionsUrl,
     options: {
       reconnect: true
     }
-  })
+  })*/
+
+  const wsLink = new GraphQLWsLink(createClient({
+    url: subscriptionsUrl,
+    options: {
+      reconnect: true
+    }
+  }));
 
   // using the ability to split links, you can send data to each link
   // depending on what kind of operation is being sent

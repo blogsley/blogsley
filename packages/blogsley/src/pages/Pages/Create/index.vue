@@ -5,6 +5,8 @@
 </template>
 
 <script>
+import { shallowRef } from 'vue'
+
 import { UiMixin, PageMixin } from '@mixins'
 import Navbox from './Navbox.vue'
 import BlockChooser from '@components/BlockChooser/index.vue'
@@ -30,8 +32,8 @@ export default {
         body: 'Blogsley rocks!!!'
       },
       state: createDemoState({
-        blockChooser: BlockChooser,
-        imageChooser: ImageChooser
+        blockChooser: shallowRef(BlockChooser),
+        imageChooser: shallowRef(ImageChooser)
       })
     }
   },
