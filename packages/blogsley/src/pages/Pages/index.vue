@@ -10,7 +10,7 @@
           <q-item-section>
             {{ edge.node.title }}
           </q-item-section>
-      </q-item>
+        </q-item>
       </q-list>
     </div>
   </q-page>

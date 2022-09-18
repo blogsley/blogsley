@@ -40,7 +40,12 @@ export default {
         return {
           id: this.userId
         }
-      }
+      },
+      update (data) {
+        const {__typename, ...user} = data.user //clone to make writable and omit __typename
+        console.log(user)
+        return user
+      },
     }
   },
   data () {
@@ -58,13 +63,14 @@ export default {
       this.$apollo.mutate({
         // Mutation
         mutation: gql`
-          mutation ($data: UserInput!) {
-            updateUser(data: $data) ${directives} {
+          mutation ($id: ID!, $data: UserInput!) {
+            updateUser(id: $id, data: $data) ${directives} {
               ok
             }
           }`,
         // Parameters
         variables: {
+          id: this.userId,
           data: this.user
         }
       })
