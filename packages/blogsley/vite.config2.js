@@ -29,8 +29,7 @@ export default defineConfig(({ mode }) => {
     plugins: [
       ViteAliases(),
       VitePWA({
-        //mode: "development",
-        mode: mode,
+        mode: "development",
         base: "/",
         //srcDir: "src/pwa",
         srcDir: "./",
@@ -103,3 +102,69 @@ export default defineConfig(({ mode }) => {
     },
   };
 });
+/*export default defineConfig({
+  root: './',
+  //envDir: 'src/config',
+  build: {       
+     outDir: 'dist',
+  },
+  publicDir: 'public',
+
+  plugins: [
+    ViteAliases(),
+    VitePWA({
+      mode: "development",
+      base: "/",
+      //srcDir: "src/pwa",
+      srcDir: "./",
+      filename: "sw.js",
+      includeAssets: ["/favicon.png"],
+      strategies: "injectManifest",
+
+      manifest: {
+        name: 'Blogsley',
+        short_name: 'Blogsley',
+        description: 'Best PWA App in town!',
+        display: 'standalone',
+        orientation: 'portrait',
+        background_color: '#ffffff',
+        theme_color: '#007d7e',
+        icons: [
+          {
+            src: 'public/icons/icon-128x128.png',
+            sizes: '128x128',
+            type: 'image/png'
+          },
+          {
+            src: 'public/icons/icon-192x192.png',
+            sizes: '192x192',
+            type: 'image/png'
+          },
+          {
+            src: 'public/icons/icon-256x256.png',
+            sizes: '256x256',
+            type: 'image/png'
+          },
+          {
+            src: 'public/icons/icon-384x384.png',
+            sizes: '384x384',
+            type: 'image/png'
+          },
+          {
+            src: 'public/icons/icon-512x512.png',
+            sizes: '512x512',
+            type: 'image/png'
+          }
+        ]
+      }
+    }),
+
+    vue({
+      template: { transformAssetUrls }
+    }),
+
+    quasar({
+      sassVariables: '~css/quasar-variables.scss'
+    })
+  ]
+})*/
