@@ -21,7 +21,7 @@
 </style>
 
 <script>
-import { UiMixin, PageMixin } from '@mixins'
+import { UiMixin, PageMixin } from '~mixins'
 import Navbox from './Navbox.vue'
 import Header from './Header.vue'
 

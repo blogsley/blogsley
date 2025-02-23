@@ -18,7 +18,7 @@
 </style>
 
 <script>
-import { UiMixin } from '@mixins'
+import { UiMixin } from '~mixins'
 import ImageCard from './ImageCard.vue'
 
 import gql from 'graphql-tag'

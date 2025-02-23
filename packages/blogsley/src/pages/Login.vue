@@ -72,7 +72,7 @@
 <script>
 import gql from 'graphql-tag'
 
-import { UiMixin, PageMixin, UserMixin } from '@mixins'
+import { UiMixin, PageMixin, UserMixin } from '~mixins'
 
 export default {
   name: 'LoginPage',

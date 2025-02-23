@@ -19,7 +19,7 @@
 <script>
 import gql from 'graphql-tag'
 
-import ImageCard from '@components/ImageCard'
+import ImageCard from '~components/ImageCard'
 
 const STATUS_INITIAL = 0, STATUS_SAVING = 1, STATUS_SUCCESS = 2, STATUS_FAILED = 3
 

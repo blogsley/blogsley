@@ -10,10 +10,10 @@ import gql from 'graphql-tag'
 
 import { BlocksleyState, serialize, deserialize, render } from '@blocksley/blocksley'
 
-import { UiMixin, PageMixin } from '@mixins'
+import { UiMixin, PageMixin } from '~mixins'
 import Navbox from './Navbox.vue'
-import BlockChooser from '@components/BlockChooser/index.vue'
-import ImageChooser from '@components/ImageChooser/index.vue'
+import BlockChooser from '~components/BlockChooser/index.vue'
+import ImageChooser from '~components/ImageChooser/index.vue'
 
 const directives = import.meta.env.VITE_STANDALONE ? '@client' : ''
 

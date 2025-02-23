@@ -33,8 +33,8 @@
 </template>
 
 <script>
-import UiMixin from '@mixins/ui'
-import NavboxShell from '@components/NavboxShell.vue'
+import UiMixin from '~mixins/ui'
+import NavboxShell from '~components/NavboxShell.vue'
 
 export default {
   name: 'DefaultNavbox',

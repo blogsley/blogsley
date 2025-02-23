@@ -1,0 +1,52 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "~api/*": [
+                "src/api/*"
+            ],
+            "~assets/*": [
+                "src/assets/*"
+            ],
+            "~boot/*": [
+                "src/boot/*"
+            ],
+            "~components/*": [
+                "src/components/*"
+            ],
+            "~config/*": [
+                "src/config/*"
+            ],
+            "~css/*": [
+                "src/css/*"
+            ],
+            "~graphql/*": [
+                "src/graphql/*"
+            ],
+            "~iam/*": [
+                "src/iam/*"
+            ],
+            "~layouts/*": [
+                "src/layouts/*"
+            ],
+            "~mixins/*": [
+                "src/mixins/*"
+            ],
+            "~pages/*": [
+                "src/pages/*"
+            ],
+            "~router/*": [
+                "src/router/*"
+            ],
+            "~statics/*": [
+                "src/statics/*"
+            ],
+            "~store/*": [
+                "src/store/*"
+            ],
+            "~/*": [
+                "src/*"
+            ]
+        }
+    }
+}

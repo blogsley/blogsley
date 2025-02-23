@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import UiMixin from '@mixins/ui'
+import UiMixin from '~mixins/ui'
 
 export default {
   name: 'NavboxShell.vue',

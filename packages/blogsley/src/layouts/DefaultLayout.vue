@@ -21,9 +21,9 @@
 </template>
 
 <script>
-import { UiMixin } from '@mixins'
-import NavDrawer from '@components/NavDrawer.vue'
-import ToolDrawer from '@components/ToolDrawer.vue'
+import { UiMixin } from '~mixins'
+import NavDrawer from '~components/NavDrawer.vue'
+import ToolDrawer from '~components/ToolDrawer.vue'
 export default {
   name: 'DefaultLayout',
   mixins: [UiMixin],

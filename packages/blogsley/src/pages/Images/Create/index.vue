@@ -7,10 +7,10 @@
 
 <script>
 import { shallowRef } from '@vue/reactivity'
-import { UiMixin, PageMixin } from '@mixins'
+import { UiMixin, PageMixin } from '~mixins'
 import Navbox from './Navbox.vue'
-import ImageUploader from '@components/ImageUploader/index.vue'
-import StandAloneImageUploader from '@components/StandAloneImageUploader/index.vue'
+import ImageUploader from '~components/ImageUploader/index.vue'
+import StandAloneImageUploader from '~components/StandAloneImageUploader/index.vue'
 
 export default {
   name: 'CreateImage',

@@ -9,7 +9,7 @@
 </style>
 
 <script>
-import { UiMixin } from '@mixins'
+import { UiMixin } from '~mixins'
 import BlockCard from './BlockCard.vue'
 import gql from 'graphql-tag'
 const blockQuery = gql`

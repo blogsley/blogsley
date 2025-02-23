@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import { UiMixin } from '@mixins'
+import { UiMixin } from '~mixins'
 
 export default {
   mixins: [UiMixin],

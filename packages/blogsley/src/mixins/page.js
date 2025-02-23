@@ -1,5 +1,5 @@
-import Navbox from '@components/DefaultNavbox.vue'
-import Footer from '@components/DefaultFooter.vue'
+import Navbox from '~components/DefaultNavbox.vue'
+import Footer from '~components/DefaultFooter.vue'
 
 export default {
   mounted () {

@@ -8,7 +8,7 @@
 import gql from 'graphql-tag'
 const directives = import.meta.env.VITE_STANDALONE ? '@client' : ''
 
-import { UiMixin, PageMixin } from '@mixins'
+import { UiMixin, PageMixin } from '~mixins'
 import Navbox from './Navbox.vue'
 import Header from './Header.vue'
 import Form from '../Form.vue'

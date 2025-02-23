@@ -12,7 +12,7 @@ const directives = import.meta.env.VITE_STANDALONE ? '@client' : ''
 
 import { BlocksleyState, deserialize } from '@blocksley/blocksley'
 
-import { UiMixin, PageMixin } from '@mixins'
+import { UiMixin, PageMixin } from '~mixins'
 import Navbox from './Navbox.vue'
 
 export default {

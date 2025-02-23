@@ -88,7 +88,7 @@ export default defineConfig({
     }),
 
     quasar({
-      sassVariables: 'src/css/quasar-variables.scss'
+      sassVariables: '~css/quasar-variables.scss'
     })
   ]
 })

@@ -7,10 +7,10 @@
 <script>
 import { shallowRef } from 'vue'
 
-import { UiMixin, PageMixin } from '@mixins'
+import { UiMixin, PageMixin } from '~mixins'
 import Navbox from './Navbox.vue'
-import BlockChooser from '@components/BlockChooser/index.vue'
-import ImageChooser from '@components/ImageChooser/index.vue'
+import BlockChooser from '~components/BlockChooser/index.vue'
+import ImageChooser from '~components/ImageChooser/index.vue'
 
 import { createDemoState, serialize, render } from '@blocksley/blocksley'
 

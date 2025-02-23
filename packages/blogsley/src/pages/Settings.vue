@@ -12,7 +12,7 @@
 </style>
 
 <script>
-import { UiMixin, PageMixin, UserMixin } from '@mixins'
+import { UiMixin, PageMixin, UserMixin } from '~mixins'
 
 export default {
   name: 'LoginPage',
