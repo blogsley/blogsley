@@ -84,22 +84,7 @@ export default defineConfig(({ mode }) => {
         sassVariables: "~css/quasar-variables.scss",
       }),
     ],
-    define: {
-      "VITE_PUBLIC_PATH": JSON.stringify(
-        env.VITE_PUBLIC_PATH || "/"
-      ),
-      "VITE_SERVER_URL": JSON.stringify(
-        env.VITE_SERVER_URL || "http://127.0.0.1:4000"
-      ),
-      "VITE_GRAPHQL_URL": JSON.stringify(
-        env.VITE_GRAPHQL_URL || `${env.VITE_SERVER_URL}/graphql/`
-      ),
-      "VITE_SUBSCRIPTIONS_URL": JSON.stringify(
-        env.VITE_SUBSCRIPTIONS_URL ||
-          `ws://${new URL(env.VITE_SERVER_URL).hostname}:${
-            new URL(env.VITE_SERVER_URL).port
-          }/graphql/`
-      ),
-    },
+    /*define: {
+    },*/
   };
 });
