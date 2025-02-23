@@ -1,9 +1,11 @@
 {
   "name": "blogsley",
   "private": true,
-  "dependencies": {},
+  "dependencies": {
+    "yarn": "^1.22.22"
+  },
   "devDependencies": {
-    "lerna": "^5.4.3"
+    "lerna": "^8.1.9"
   },
   "resolutions": {},
   "workspaces": [
