@@ -18,7 +18,12 @@ export default defineConfig({
   root: './',
   envDir: 'src/config',
   build: {       
-     outDir: 'dist',
+    outDir: 'dist',
+    rollupOptions: {
+      external: [
+        'assets',
+      ],
+    },
   },
   publicDir: 'public',
   //css: { preprocessorOptions: { scss: { charset: false } } },
